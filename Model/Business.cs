@@ -32,10 +32,10 @@ namespace MVVMApplication.Model
             if (updatedPerson.Id > 0)
             {
                 User selectedPerson = _dbContext.Person.First(p => p.Id == updatedPerson.Id);
-                selectedPerson.FirstName = updatedPerson.FirstName;
-                selectedPerson.LastName = updatedPerson.LastName;
-                selectedPerson.CityOfResidence = updatedPerson.CityOfResidence;
-                selectedPerson.Profession = updatedPerson.Profession;
+                //selectedPerson.FirstName = updatedPerson.FirstName;
+                //selectedPerson.LastName = updatedPerson.LastName;
+                //selectedPerson.CityOfResidence = updatedPerson.CityOfResidence;
+                //selectedPerson.Profession = updatedPerson.Profession;
             }
             else
             {
