@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace MVVMApplication.Model
 {
-    public class PersonDB:DbContext
+    public class FitnessDB:DbContext
     {
-        public PersonDB():base("name=DefaultConnection")
+        public FitnessDB():base("name=DefaultConnection")
         {
 
         }

@@ -8,12 +8,12 @@ namespace MVVMApplication.Model
 {
     public class Business
     {
-        PersonDB _dbContext = null;
+        FitnessDB _dbContext = null;
         public Business()
         {
             AppDomain.CurrentDomain.SetData("DataDirectory",
              Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData));
-            _dbContext = new PersonDB();
+            _dbContext = new FitnessDB();
         }
 
         internal IEnumerable<User> Get()

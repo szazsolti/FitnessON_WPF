@@ -73,7 +73,7 @@
     <Compile Include="Model\NumberOfEntriesLease.cs" />
     <Compile Include="Model\PeriodLease.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="Model\PersonDB.cs" />
+    <Compile Include="Model\FitnessDB.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="View\PersonCollection.xaml.cs">
       <DependentUpon>PersonCollection.xaml</DependentUpon>
