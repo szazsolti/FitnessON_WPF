@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Common"
+    "\\Model",
+    "\\ViewModel"
   ],
-  "SelectedNode": "\\Common\\NotificationClass.cs",
+  "SelectedNode": "\\Model\\FitnessDB.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -19,3 +19,9 @@ D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.csproj.Core
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.csproj.CopyComplete
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\MVVMApplication.exe
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\MVVMApplication.pdb
+D:\Dokumentumok\Negyed ev\DotNet\Projekt\obj\Debug\MainWindow.g.cs
+D:\Dokumentumok\Negyed ev\DotNet\Projekt\obj\Debug\View\PersonCollection.g.cs
+D:\Dokumentumok\Negyed ev\DotNet\Projekt\obj\Debug\App.g.cs
+D:\Dokumentumok\Negyed ev\DotNet\Projekt\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Dokumentumok\Negyed ev\DotNet\Projekt\obj\Debug\MVVMApplication_MarkupCompile.cache
+D:\Dokumentumok\Negyed ev\DotNet\Projekt\obj\Debug\MVVMApplication_MarkupCompile.lref
