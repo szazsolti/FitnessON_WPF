@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 
 namespace MVVMApplication.Model
 {
-    class PeriodLease
+    class Logs
     {
         [Key]
-        public int Id { get; set; }
-        public int NumberOfDays { get; set; }
+        public int Log_Id { get; set; }
+        public long Time { get; set; }
+        public User User{ get; set; }
+        public Lease Lease { get; set; }
+        public string Message { get; set; }
     }
 }

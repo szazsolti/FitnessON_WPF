@@ -69,9 +69,13 @@
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\Utility.cs" />
     <Compile Include="Model\Business.cs" />
+    <Compile Include="Model\IntermediateLease.cs" />
+    <Compile Include="Model\Lease.cs" />
+    <Compile Include="Model\Logs.cs" />
     <Compile Include="Model\MixLease.cs" />
     <Compile Include="Model\NumberOfEntriesLease.cs" />
     <Compile Include="Model\PeriodLease.cs" />
+    <Compile Include="Model\LeaseTypes.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\PersonDB.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
