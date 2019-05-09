@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace FitnessON.Model
 {
-    public class PeriodLease
+    public class IntermediateLease
     {
         [Key]
-        public int Id { get; set; }
-        public int NumberOfDays { get; set; }
+        public string Card_Id { get; set; }
+        public int Lease_Id { get; set; }
+        public Lease Lease { get; set; }
     }
 }
