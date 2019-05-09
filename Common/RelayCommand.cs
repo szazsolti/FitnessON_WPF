@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace MVVMApplication.Infra
+namespace FitnessON.Infra
 {
     public class RelayCommand : ICommand
     {

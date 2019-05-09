@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MVVMApplication.Model
+namespace FitnessON.Model
 {
-    class NumberOfEntriesLease
+    public class NumberOfEntriesLease
     {
         [Key]
         public int Id { get; set; }

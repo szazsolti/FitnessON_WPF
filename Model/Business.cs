@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MVVMApplication.Model
+namespace FitnessON.Model
 {
     public class Business
     {
@@ -18,12 +18,12 @@ namespace MVVMApplication.Model
 
         internal IEnumerable<User> Get()
         {
-            return _dbContext.Person.ToList();
+            return _dbContext.User.ToList();
         }
 
         internal void Delete(User person)
         {
-            _dbContext.Person.Remove(person);
+            _dbContext.User.Remove(person);
         }
 
         internal void Update(User updatedPerson)
@@ -31,7 +31,7 @@ namespace MVVMApplication.Model
             CheckValidations(updatedPerson);
             if (updatedPerson.Id > 0)
             {
-                User selectedPerson = _dbContext.Person.First(p => p.Id == updatedPerson.Id);
+                User selectedPerson = _dbContext.User.First(p => p.Id == updatedPerson.Id);
                 //selectedPerson.FirstName = updatedPerson.FirstName;
                 //selectedPerson.LastName = updatedPerson.LastName;
                 //selectedPerson.CityOfResidence = updatedPerson.CityOfResidence;
@@ -39,7 +39,7 @@ namespace MVVMApplication.Model
             }
             else
             {
-                _dbContext.Person.Add(updatedPerson);
+                _dbContext.User.Add(updatedPerson);
             }
 
             _dbContext.SaveChanges();

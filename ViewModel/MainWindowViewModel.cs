@@ -1,16 +1,30 @@
-﻿using MVVMApplication.Infra;
-using MVVMApplication.Model;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MVVMApplication.ViewModel
+﻿
+namespace FitnessON.ViewModel
 {
-    public class MainWindowViewModel:NotificationClass
+    using FitnessON.Infra;
+    using FitnessON.Logic;
+    using FitnessON.Model;
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    //MainWindowViewModel:NotificationClass
+    public class MainWindowViewModel : NotificationClass
     {
+        public static Controller Controller;
+
+
+        public MainWindowViewModel()
+        {
+            Instance = this;
+            Controller = new Controller();
+        }
+
+        public static MainWindowViewModel Instance { get; private set; }
+        public EventHandler ShowMessageBox = delegate { };
+        /*
         Business _business;
         private User _person;
         public EventHandler ShowMessageBox = delegate { };
@@ -106,5 +120,6 @@ namespace MVVMApplication.ViewModel
         {
             _business.Delete(SelectedPerson);
         }
+    }*/
     }
 }

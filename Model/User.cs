@@ -1,4 +1,4 @@
-﻿using MVVMApplication.Infra;
+﻿using FitnessON.Infra;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MVVMApplication.Model
+namespace FitnessON.Model
 {
     public class User:NotificationClass
     {

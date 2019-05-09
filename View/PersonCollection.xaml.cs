@@ -1,5 +1,5 @@
-﻿using MVVMApplication.Infra;
-using MVVMApplication.ViewModel;
+﻿using FitnessON.Infra;
+using FitnessON.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MVVMApplication.View
+namespace FitnessON.View
 {
     /// <summary>
     /// Interaction logic for PersonCollection.xaml

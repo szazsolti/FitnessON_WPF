@@ -5,12 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MVVMApplication.Model
+namespace FitnessON.Model
 {
-    class IntermediateLease
+    public class IntermediateLease
     {
         [Key]
-        public int Card_Id { get; set; }
+        public string Card_Id { get; set; }
+        public int Lease_Id { get; set; }
         public Lease Lease { get; set; }
     }
 }
