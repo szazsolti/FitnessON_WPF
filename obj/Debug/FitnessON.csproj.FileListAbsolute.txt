@@ -46,3 +46,5 @@ D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.csproj.CopyComplete
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.csprojAssemblyReference.cache
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\LoginScreen.g.cs
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\LoginScreen.baml
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\UserProfile.g.cs
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\UserProfile.baml

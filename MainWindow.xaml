@@ -12,6 +12,6 @@
         <VM:MainWindowViewModel></VM:MainWindowViewModel>
     </Window.DataContext>
     <Grid>
-        <View:LoginScreen></View:LoginScreen>
+        <View:UserProfile></View:UserProfile>
     </Grid>
 </Window>
