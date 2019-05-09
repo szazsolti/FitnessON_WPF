@@ -1,4 +1,5 @@
 ﻿using FitnessON.Infra;
+using FitnessON.Logic;
 using FitnessON.Model;
 using System;
 using System.Collections.Generic;
@@ -10,8 +11,12 @@ namespace FitnessON.ViewModel
 {
     class LoginScreenViewModel:NotificationClass
     {
-        private List<User> users = new List<User>();
+        private List<User> users;
 
+        public LoginScreenViewModel()
+        {
+            this.users = Data.Controller.GetUsers();
+        }
 
         public List<User> Users
         {

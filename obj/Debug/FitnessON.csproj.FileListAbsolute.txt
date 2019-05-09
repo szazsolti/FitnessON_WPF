@@ -45,3 +45,6 @@ D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.csproj.Core
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.csproj.CopyComplete
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.exe
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.pdb
+D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.csprojAssemblyReference.cache
+D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\UserProfile.g.cs
+D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\UserProfile.baml
