@@ -7,7 +7,7 @@
         xmlns:VM="clr-namespace:MVVMApplication.ViewModel"
         xmlns:View="clr-namespace:MVVMApplication.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="370" Width="525">
     <Window.DataContext>
         <VM:MainWindowViewModel></VM:MainWindowViewModel>
     </Window.DataContext>
