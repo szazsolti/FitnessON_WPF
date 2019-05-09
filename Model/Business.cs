@@ -32,10 +32,10 @@ namespace MVVMApplication.Model
             if (updatedPerson.Id > 0)
             {
                 User selectedPerson = _dbContext.Person.First(p => p.Id == updatedPerson.Id);
-                selectedPerson.FirstName = updatedPerson.FirstName;
-                selectedPerson.LastName = updatedPerson.LastName;
-                selectedPerson.CityOfResidence = updatedPerson.CityOfResidence;
-                selectedPerson.Profession = updatedPerson.Profession;
+                //selectedPerson.FirstName = updatedPerson.FirstName;
+                //selectedPerson.LastName = updatedPerson.LastName;
+                //selectedPerson.CityOfResidence = updatedPerson.CityOfResidence;
+                //selectedPerson.Profession = updatedPerson.Profession;
             }
             else
             {
@@ -51,7 +51,7 @@ namespace MVVMApplication.Model
             {
                 throw new ArgumentNullException("Person", "Please select record from Grid or Add New");
             }
-
+            /*
             if (string.IsNullOrEmpty(person.FirstName))
             {
                 throw new ArgumentNullException("First Name", "Please enter FirstName");
@@ -63,7 +63,7 @@ namespace MVVMApplication.Model
             else if ((int)person.Profession == -1)
             {
                 throw new ArgumentNullException("Profession", "Please enter Profession");
-            }
+            }*/
         }
     }
 }
