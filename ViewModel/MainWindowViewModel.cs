@@ -12,23 +12,23 @@ namespace MVVMApplication.ViewModel
     public class MainWindowViewModel:NotificationClass
     {
         Business _business;
-        private Person _person;
+        private User _person;
         public EventHandler ShowMessageBox = delegate { };
         public MainWindowViewModel()
         {          
             _business = new Business();
-            PersonCollection = new ObservableCollection<Person>(_business.Get());
+            PersonCollection = new ObservableCollection<User>(_business.Get());
         }
 
-        private ObservableCollection<Person> personCollection;
-        public ObservableCollection<Person> PersonCollection
+        private ObservableCollection<User> personCollection;
+        public ObservableCollection<User> PersonCollection
         {
             get { return personCollection; }
             set { personCollection = value;
                 OnProprtyChanged();
             }
         }
-        public Person SelectedPerson
+        public User SelectedPerson
         {
             get
             {
@@ -54,7 +54,7 @@ namespace MVVMApplication.ViewModel
         {
             try
             {
-                SelectedPerson = new Person();                       
+                SelectedPerson = new User();                       
             }
             catch (Exception ex)
             {
@@ -78,7 +78,7 @@ namespace MVVMApplication.ViewModel
             try
             {
                 _business.Update(SelectedPerson);
-                PersonCollection = new ObservableCollection<Person>(_business.Get());
+                PersonCollection = new ObservableCollection<User>(_business.Get());
                 ShowMessageBox(this, new MessageEventArgs()
                 {
                     Message = "Changes are saved !"

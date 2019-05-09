@@ -16,22 +16,22 @@ namespace MVVMApplication.Model
             _dbContext = new PersonDB();
         }
 
-        internal IEnumerable<Person> Get()
+        internal IEnumerable<User> Get()
         {
             return _dbContext.Person.ToList();
         }
 
-        internal void Delete(Person person)
+        internal void Delete(User person)
         {
             _dbContext.Person.Remove(person);
         }
 
-        internal void Update(Person updatedPerson)
+        internal void Update(User updatedPerson)
         {
             CheckValidations(updatedPerson);
             if (updatedPerson.Id > 0)
             {
-                Person selectedPerson = _dbContext.Person.First(p => p.Id == updatedPerson.Id);
+                User selectedPerson = _dbContext.Person.First(p => p.Id == updatedPerson.Id);
                 selectedPerson.FirstName = updatedPerson.FirstName;
                 selectedPerson.LastName = updatedPerson.LastName;
                 selectedPerson.CityOfResidence = updatedPerson.CityOfResidence;
@@ -45,7 +45,7 @@ namespace MVVMApplication.Model
             _dbContext.SaveChanges();
         }
 
-        private void CheckValidations(Person person)
+        private void CheckValidations(User person)
         {
             if(person == null)
             {

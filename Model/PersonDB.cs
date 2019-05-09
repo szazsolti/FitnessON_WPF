@@ -14,6 +14,6 @@ namespace MVVMApplication.Model
 
         }
 
-        public DbSet<Person> Person { get; set; }
+        public DbSet<User> Person { get; set; }
     }
 }

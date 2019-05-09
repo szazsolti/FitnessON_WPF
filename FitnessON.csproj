@@ -69,7 +69,10 @@
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\Utility.cs" />
     <Compile Include="Model\Business.cs" />
-    <Compile Include="Model\Person.cs" />
+    <Compile Include="Model\MixLease.cs" />
+    <Compile Include="Model\NumberOfEntriesLease.cs" />
+    <Compile Include="Model\PeriodLease.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Model\PersonDB.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="View\PersonCollection.xaml.cs">
