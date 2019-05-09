@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="MVVMApplication.View.LoginScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MVVMApplication.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="750">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock 
+            Grid.Row="1" Grid.Column="1" 
+            Text="Kártyaszám" 
+            Margin="2"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center">
+        </TextBlock>
+
+        <TextBox 
+            Grid.Row="1" Grid.Column="2"
+            MinWidth="100"
+            Margin="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+        </TextBox>
+
+        <TextBlock 
+            Grid.Row="3" Grid.Column="3"
+            Grid.ColumnSpan="2"
+            Margin="3"
+            Text="Készítette: Zsabó Zsolt és Sólyom Zsolt"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom">
+        </TextBlock>
+
+        <Image 
+            Grid.Row="0" Grid.Column="0"
+            Width="50"
+            Margin = "30"
+            VerticalAlignment = "Top"
+            Source = "Resources/logo.png" >
+        </Image>
+
+        
+
+    </Grid>
+    
+    
+</UserControl>

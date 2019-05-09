@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\
 MVVMApplication
 none
 false
 DEBUG;TRACE
-D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\App.xaml
-2749950068
+D:\Dokumentumok\Negyed ev\DotNet\Pro\App.xaml
+3-2133007721
 
-20-1498290909
-16-1118849719
-MainWindow.xaml;View\PersonCollection.xaml;
+17-781316312
+16-1637338375
+MainWindow.xaml;View\LoginScreen.xaml;View\PersonCollection.xaml;
 
-True
+False
 
