@@ -43,3 +43,6 @@ D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\MVVMApplication.Properties.Resour
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.csproj.GenerateResource.cache
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.csproj.CoreCompileInputs.cache
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.csproj.CopyComplete
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.csprojAssemblyReference.cache
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\LoginScreen.g.cs
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\LoginScreen.baml
