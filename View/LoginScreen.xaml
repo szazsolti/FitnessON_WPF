@@ -35,15 +35,13 @@
             VerticalAlignment="Top">
         </TextBlock>
 
-        <TextBox
+        <TextBox 
             Grid.Row="2" Grid.Column="1"
             MinWidth="100"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Text="{Binding Path=Card_Id, UpdateSourceTrigger=PropertyChanged}">
-            <TextBox.InputBindings>
-                <KeyBinding Command="{Binding VerifyLoginCommand}" Key="Enter" />
-            </TextBox.InputBindings>
+            Text="{Binding Path=Card_Id, UpdateSourceTrigger=PropertyChanged}"
+            >
         </TextBox>
 
         <Button 
@@ -52,7 +50,8 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Bejelentkezés"
-            Command="{Binding VerifyLoginCommand}">
+            Command="{Binding VerifyLoginCommand}"
+            >
         </Button>
 
         <TextBlock 

@@ -63,7 +63,14 @@ namespace FitnessON.ViewModel
             this.SelectedContent = this.Contents.First();
         }
 
-        
+        public void SetUserToProfile(User user)
+        {
+            UserProfileViewModel userProfileViewModel = new UserProfileViewModel();
+            userProfileViewModel.User = user;
+            this.Contents.Add(userProfileViewModel);
+            this.selectedContent = this.Contents.Last();
+            this.Contents.Remove(this.Contents.First());
+        }
 
         /*
         Business _business;

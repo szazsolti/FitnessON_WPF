@@ -7,4 +7,9 @@
     <DataTemplate x:Key="LoginTemplate" DataType="x:Type types:ILoginContent">
         <userControls:LoginScreen/>
     </DataTemplate>
+
+    <DataTemplate x:Key="ProfileTemplate" DataType="x:Type types:IProfileContent">
+        <userControls:UserProfile/>
+    </DataTemplate>
+    
 </ResourceDictionary>

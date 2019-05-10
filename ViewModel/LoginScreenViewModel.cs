@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace FitnessON.ViewModel
 {
@@ -15,13 +14,14 @@ namespace FitnessON.ViewModel
     {
         private List<User> users;
         private String card_Id;
-
+        private User userLoggedIn = new User();
+        
         public LoginScreenViewModel()
         {
             this.users = Data.Controller.GetUsers();
             this.VerifyLoginCommand = new RelayCommand(this.VerifyLoginCommandExecute, this.VerifyLoginCommandCanExecute);
-            Console.WriteLine(users.ToList().First().Name);
-            
+            //Console.WriteLine(users.ToList().Count);
+
         }
 
         public List<User> Users
@@ -60,36 +60,27 @@ namespace FitnessON.ViewModel
 
         public void VerifyLoginCommandExecute()
         {
-            bool found = false;
             foreach (var item in users)
             {
-                if (item.Card_Id.Equals(this.card_Id))
+                if(item.Card_Id == card_Id)
                 {
-                    found = true;
-                    Console.WriteLine("found"); 
+                    Console.WriteLine("OK!");
+                    userLoggedIn = item;
+                    if (this.userLoggedIn != null)
+                    {
+                        MainWindowViewModel.Instance.SetUserToProfile(this.userLoggedIn);
+                    }
                 }
-            }
-            if (!found)
-            {
-            System.Windows.MessageBox.Show("Az ön által megadott kártyaszám érvénytelen!", "Hiba történt!");
             }
         }
 
-        private void OnKeyDownHandler(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter)
-            {
-                VerifyLoginCommandExecute();
-            }
-        }
         public bool VerifyLoginCommandCanExecute()
         {
-           if(this.card_Id != null && this.card_Id.Length > 0)
+            if(this.card_Id != null && this.card_Id.Length > 0)
             {
                 return true;
             }
             return false;
-
         }
 
     }

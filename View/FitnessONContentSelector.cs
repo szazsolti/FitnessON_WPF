@@ -17,6 +17,10 @@ namespace FitnessON.View
             {
                 return Application.Current.MainWindow.TryFindResource("LoginTemplate") as DataTemplate;
             }
+            else if (item is IProfileContent)
+            {
+                return Application.Current.MainWindow.TryFindResource("ProfileTemplate") as DataTemplate;
+            }
             return null;
         }
     }

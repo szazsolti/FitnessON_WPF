@@ -27,6 +27,10 @@ namespace FitnessON
         {
             InitializeComponent();
             this.Closed += MainWindow_Closed;
+            /* (this.DataContext as MainWindowViewModel).ShowMessageBox += delegate (object sender, EventArgs args)
+             {
+                 MessageBox.Show(((MessageEventArgs)args).Message);
+             };*/
         }
         private void MainWindow_Closed(object sender, EventArgs e)
         {
