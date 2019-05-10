@@ -17,6 +17,8 @@
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -25,11 +27,11 @@
         </Grid.ColumnDefinitions>
 
         <Image 
-            Grid.RowSpan="9"
+            Grid.RowSpan="10"
             VerticalAlignment = "Center"
             HorizontalAlignment="Center"
             Margin="15"         
-            Source = "https://lh3.googleusercontent.com/kNIrWjxD__-SbvIjDBNXTZtg5wBi0w75dQwGWVHU4gK7oQvQdWJvUyTWX34SsYEGRe21t0QHD6R3JPN3ZW1fvLZ-9jcg-5Gh2ohUU4-7lCQRtrt3T3kWFMIWCipJL6TZNOayOS2RY0HpHX0bdduQL84a7hvjgVB3uKocapS0uM76Hg96sz31osHEdMy8R5SYzg_sFSLK5ItdINCY8lPnCLsv7nYij7PVpAP1S4GVBv2tAjLtZak7vxjFH53LkQfS0WVNxfW_xfA5WHxImjP0QTw0h9LvbOEXDemvgZ8-TN7PV1_deAttxeedQtLAy8I3EFN7Ep52QlO-c0QoYqXWrknGGSveah-_ZxadphG4rCvkvL4jGYEaSpyQfZfsfmMBy7U19S4FF2B3Abrsu9tZt5yg0dxq8yiCBbU_F1SSC52XNpNYW68a1wdMBG-B_dMoxq-kDLpxNPuzw4pNRBbjDBEk_I4FzTq628RmzXCgU1RxSxr5H5a1KRYP6uSevexAH8LEUqmZcvqJuUKKc7kCpVyQTWhvyE-j_ajj3p3Dsf63iOCzst02jiH3alyV6dP7KtalDOpT7PSJW7yivWUrBvURYqkzDfQ7pqi2gX-lJu3vb8-aXGcmB57Fxx7pVq1uPul7XocVW0n3mChE9wa5W8a8HPeTdQBIazGF1mqGoS3jUSDz7ZH4IgXPSA9xdJTMjDbSyzpFzQjAg4JwOIC0pinV=w494-h658-no" >
+            Source = "{Binding ProfilePicture}">
         </Image>
         
         <TextBlock 
@@ -43,7 +45,7 @@
 
         <TextBlock 
             Grid.Row="1" Grid.Column="1" 
-            Text="Ide jön a név binding" 
+            Text="{Binding UserName}" 
             FontSize="15"
             FontWeight="DemiBold"
             HorizontalAlignment="Left" 
@@ -61,7 +63,7 @@
 
         <TextBlock 
             Grid.Row="3" Grid.Column="1" 
-            Text="Ide jön a telszám binding" 
+            Text="{Binding PhoneNumber}"
             FontSize="15"
             FontWeight="DemiBold"
             HorizontalAlignment="Left" 
@@ -79,7 +81,7 @@
 
         <TextBlock 
             Grid.Row="5" Grid.Column="1" 
-            Text="Ide jön az email cim binding" 
+            Text="{Binding EmailAddress}"
             FontSize="15"
             FontWeight="DemiBold"
             HorizontalAlignment="Left" 
@@ -97,7 +99,7 @@
 
         <TextBlock 
             Grid.Row="7" Grid.Column="1" 
-            Text="Ide jön a kártya binding" 
+            Text="{Binding CardNumber}"
             FontSize="15"
             FontWeight="DemiBold"
             HorizontalAlignment="Left" 
