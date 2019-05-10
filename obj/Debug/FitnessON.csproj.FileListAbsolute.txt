@@ -47,3 +47,5 @@ D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.g.resources
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.Properties.Resources.resources
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.exe
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.pdb
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\LeaseSelector.g.cs
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\LeaseSelector.baml
