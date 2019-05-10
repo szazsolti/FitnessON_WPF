@@ -42,6 +42,9 @@
             VerticalAlignment="Top"
             Text="{Binding Path=Card_Id, UpdateSourceTrigger=PropertyChanged}"
             >
+            <TextBox.InputBindings>
+                <KeyBinding Key="Enter" Command="{Binding VerifyLoginCommand}"/>
+            </TextBox.InputBindings>
         </TextBox>
 
         <Button 

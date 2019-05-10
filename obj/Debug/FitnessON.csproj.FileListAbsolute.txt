@@ -57,3 +57,6 @@ D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.csproj.Core
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.csproj.CopyComplete
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.exe
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.pdb
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\App.baml
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\FitnessONContentTemplates.baml
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\Style.baml

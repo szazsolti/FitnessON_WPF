@@ -31,6 +31,50 @@ namespace FitnessON.ViewModel
             }
         }
 
+        public string UserName
+        {
+            get
+            {
+                return this.loggedInUser.Name;
+            }
+            
+        }
+
+        public string EmailAddress
+        {
+            get
+            {
+                return this.loggedInUser.Email;
+            }
+
+        }
+
+        public string PhoneNumber
+        {
+            get
+            {
+                return this.loggedInUser.Phone;
+            }
+
+        }
+
+        public string CardNumber
+        {
+            get
+            {
+                return this.loggedInUser.Card_Id;
+            }
+
+        }
+
+        public string ProfilePicture
+        {
+            get
+            {
+                return this.loggedInUser.Picture;
+            }
+
+        }
 
         public string Header => "Saját profilom";
     }
