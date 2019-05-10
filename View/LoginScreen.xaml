@@ -40,7 +40,7 @@
             MinWidth="100"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Text="{Binding Path=Card_Id, ElementName=window}"
+            Text="{Binding Path=Card_Id, UpdateSourceTrigger=PropertyChanged}"
             >
         </TextBox>
 
@@ -50,7 +50,8 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Bejelentkezés"
-            Command="{Binding VerifyLoginCommand}">
+            Command="{Binding VerifyLoginCommand}"
+            >
         </Button>
 
         <TextBlock 

@@ -14,13 +14,14 @@ namespace FitnessON.ViewModel
     {
         private List<User> users;
         private String card_Id;
-
+        private User userLoggedIn = new User();
+        
         public LoginScreenViewModel()
         {
             this.users = Data.Controller.GetUsers();
             this.VerifyLoginCommand = new RelayCommand(this.VerifyLoginCommandExecute, this.VerifyLoginCommandCanExecute);
             //Console.WriteLine(users.ToList().Count);
-            
+
         }
 
         public List<User> Users
@@ -59,12 +60,27 @@ namespace FitnessON.ViewModel
 
         public void VerifyLoginCommandExecute()
         {
-
+            foreach (var item in users)
+            {
+                if(item.Card_Id == card_Id)
+                {
+                    Console.WriteLine("OK!");
+                    userLoggedIn = item;
+                    if (this.userLoggedIn != null)
+                    {
+                        MainWindowViewModel.Instance.SetUserToProfile(this.userLoggedIn);
+                    }
+                }
+            }
         }
 
         public bool VerifyLoginCommandCanExecute()
         {
-            return this.card_Id != null;
+            if(this.card_Id != null && this.card_Id.Length > 0)
+            {
+                return true;
+            }
+            return false;
         }
 
     }

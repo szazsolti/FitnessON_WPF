@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MVVMApplication.View
+namespace FitnessON.View
 {
     /// <summary>
     /// Interaction logic for UserProfile.xaml
