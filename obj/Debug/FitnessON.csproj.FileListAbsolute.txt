@@ -27,9 +27,6 @@ D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.g.resources
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.Properties.Resources.resources
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.exe
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.pdb
-D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\bin\Debug\FitnessON.exe.config
-D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\bin\Debug\FitnessON.exe
-D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\bin\Debug\FitnessON.pdb
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\MainWindow.g.cs
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\LoginScreen.g.cs
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\PersonCollection.g.cs
@@ -38,6 +35,14 @@ D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\App.g.cs
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON_MarkupCompile.cache
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON_MarkupCompile.lref
+D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\bin\Debug\FitnessON.exe.config
+D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\bin\Debug\FitnessON.exe
+D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\bin\Debug\FitnessON.pdb
+D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\bin\Debug\EntityFramework.dll
+D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\bin\Debug\EntityFramework.SqlServer.dll
+D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\bin\Debug\EntityFramework.xml
+D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\bin\Debug\EntityFramework.SqlServer.xml
+D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.csprojAssemblyReference.cache
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\App.baml
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\MainWindow.baml
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\FitnessONContentTemplates.baml
