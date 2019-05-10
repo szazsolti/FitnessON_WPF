@@ -9,25 +9,68 @@ namespace FitnessON.Infra
 {
     public class RelayCommand : ICommand
     {
-        private Action localAction;
-        private bool _localCanExecute;
-        public RelayCommand(Action action, bool canExecute)
+        private Action executeAction;
+
+        private Func<bool> canExecuteFunc;
+
+        public event EventHandler CanExecuteChanged
         {
-            localAction = action;
-            _localCanExecute = canExecute;
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
+        }
+
+        public RelayCommand(Action execute, Func<bool> canExecute = null)
+        {
+            this.ExecuteAction = execute;
+            this.CanExecuteFunc = canExecute;
         }
 
 
-        public event EventHandler CanExecuteChanged;
+        public Action ExecuteAction
+        {
+            get
+            {
+                return this.executeAction;
+            }
+
+            set
+            {
+                this.executeAction = value;
+            }
+        }
+
+        public Func<bool> CanExecuteFunc
+        {
+            get
+            {
+                return this.canExecuteFunc;
+            }
+
+            set
+            {
+                this.canExecuteFunc = value;
+            }
+        }
 
         public bool CanExecute(object parameter)
         {
-            return _localCanExecute;
+            if (this.CanExecuteFunc != null)
+            {
+                return this.CanExecuteFunc.Invoke();
+            }
+            else
+            {
+                return true;
+            }
         }
 
         public void Execute(object parameter)
         {
-            localAction();
+            if (this.ExecuteAction != null)
+            {
+                this.ExecuteAction.Invoke();
+            }
         }
     }
+
 }
