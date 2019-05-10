@@ -25,7 +25,7 @@
         </Grid.ColumnDefinitions>
 
         <Image 
-            Grid.RowSpan="8"
+            Grid.RowSpan="9"
             VerticalAlignment = "Center"
             HorizontalAlignment="Center"
             Margin="15"         
@@ -103,6 +103,13 @@
             HorizontalAlignment="Left" 
             VerticalAlignment="Center">
         </TextBlock>
+
+        <Button 
+            Grid.Row="8" Grid.Column="1" 
+            VerticalAlignment="Top"
+            HorizontalAlignment="Stretch"
+            Content="Bérletek kezelése">
+        </Button>
 
 
     </Grid>

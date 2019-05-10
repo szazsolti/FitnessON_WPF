@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace FitnessON.ViewModel
 {
@@ -19,7 +20,7 @@ namespace FitnessON.ViewModel
         {
             this.users = Data.Controller.GetUsers();
             this.VerifyLoginCommand = new RelayCommand(this.VerifyLoginCommandExecute, this.VerifyLoginCommandCanExecute);
-            //Console.WriteLine(users.ToList().Count);
+            Console.WriteLine(users.ToList().First().Name);
             
         }
 
@@ -59,12 +60,36 @@ namespace FitnessON.ViewModel
 
         public void VerifyLoginCommandExecute()
         {
-
+            bool found = false;
+            foreach (var item in users)
+            {
+                if (item.Card_Id.Equals(this.card_Id))
+                {
+                    found = true;
+                    Console.WriteLine("found"); 
+                }
+            }
+            if (!found)
+            {
+            System.Windows.MessageBox.Show("Az ön által megadott kártyaszám érvénytelen!", "Hiba történt!");
+            }
         }
 
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                VerifyLoginCommandExecute();
+            }
+        }
         public bool VerifyLoginCommandCanExecute()
         {
-            return this.card_Id != null;
+           if(this.card_Id != null && this.card_Id.Length > 0)
+            {
+                return true;
+            }
+            return false;
+
         }
 
     }

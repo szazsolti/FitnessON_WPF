@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FitnessON.Model.DBContext
 {
-    public class DBInitializer : CreateDatabaseIfNotExists<FitnessDB>
+    public class DBInitializer : DropCreateDatabaseAlways<FitnessDB>
     {
         protected override void Seed(FitnessDB context)
         {
@@ -25,17 +25,20 @@ namespace FitnessON.Model.DBContext
         {
             context.User.Add(new User { Id = 1, Name = "Pistike", Phone = "+40757485983", Email="pistike@admin.com", Card_Id="1as58e597d", Picture = "", Permission="admin"});
             context.User.Add(new User { Id = 2, Name = "Joska", Phone = "+40754859553", Email = "joska@user.com", Card_Id = "i5h2f58r2d5", Picture = "", Permission = "user" });
+            context.User.Add(new User { Id = 3, Name = "Gazsi", Phone = "+40751412598", Email = "Gazsi@user.com", Card_Id = "gazsi", Picture = "", Permission = "user" });
         }
 
         private void AddNumberOfEntriesLeases(FitnessDB context) {
             context.NumberOfEntriesLeases.Add(new NumberOfEntriesLease { Id = 1, Quantity = 10 });
             context.NumberOfEntriesLeases.Add(new NumberOfEntriesLease { Id = 2, Quantity = 20 });
+            context.NumberOfEntriesLeases.Add(new NumberOfEntriesLease { Id = 3, Quantity = 30 });
         }
 
         private void AddPeriodLeases(FitnessDB context)
         {
             context.PeriodLeases.Add(new PeriodLease { Id = 1, NumberOfDays = 10 });
             context.PeriodLeases.Add(new PeriodLease { Id = 2, NumberOfDays = 20 });
+            context.PeriodLeases.Add(new PeriodLease { Id = 3, NumberOfDays = 30 });
         }
 
         private void AddMixLease(FitnessDB context)
