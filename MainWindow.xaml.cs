@@ -1,5 +1,6 @@
 ﻿using FitnessON.Infra;
 using FitnessON.ViewModel;
+using FitnessON.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,10 @@ namespace FitnessON
         public MainWindow()
         {
             InitializeComponent();
-            
+           /* (this.DataContext as MainWindowViewModel).ShowMessageBox += delegate (object sender, EventArgs args)
+            {
+                MessageBox.Show(((MessageEventArgs)args).Message);
+            };*/
         }
     }
 }

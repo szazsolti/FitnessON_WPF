@@ -1,6 +1,7 @@
 ﻿
 namespace FitnessON.ViewModel
 {
+    using FitnessON.Common;
     using FitnessON.Infra;
     using FitnessON.Logic;
     using FitnessON.Model;
@@ -14,16 +15,56 @@ namespace FitnessON.ViewModel
     public class MainWindowViewModel : NotificationClass
     {
         public static Controller Controller;
-
+        private ObservableCollection<IFitnessContent> contents;
+        private IFitnessContent selectedContent;
 
         public MainWindowViewModel()
         {
             Instance = this;
             Controller = new Controller();
+            this.GenerateContents();
         }
 
         public static MainWindowViewModel Instance { get; private set; }
         public EventHandler ShowMessageBox = delegate { };
+
+        public ObservableCollection<IFitnessContent> Contents
+        {
+            get
+            {
+                return this.contents;
+            }
+            set
+            {
+                this.contents = value;
+                this.OnProprtyChanged();
+            }
+        }
+
+        public IFitnessContent SelectedContent
+        {
+            get
+            {
+                return this.selectedContent;
+            }
+            set
+            {
+                this.selectedContent = value;
+                this.OnProprtyChanged();
+            }
+        }
+
+        private void GenerateContents()
+        {
+            this.Contents = new ObservableCollection<IFitnessContent>();
+            IFitnessContent loginScreenViewModel = new LoginScreenViewModel();
+            this.Contents.Add(loginScreenViewModel);
+
+            this.SelectedContent = this.Contents.First();
+        }
+
+        
+
         /*
         Business _business;
         private User _person;

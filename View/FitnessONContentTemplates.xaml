@@ -1,0 +1,10 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"              
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"                
+    xmlns:local="clr-namespace:FitnessON.View"
+    xmlns:userControls="clr-namespace:FitnessON.View">
+    
+    <DataTemplate x:Key="LoginTemplate" DataType="x:Type types:ILoginContent">
+        <userControls:LoginScreen/>
+    </DataTemplate>
+</ResourceDictionary>

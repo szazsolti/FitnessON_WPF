@@ -7,6 +7,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using FitnessON.ViewModel;
+using FitnessON.Common;
 
 namespace FitnessON
 {
@@ -18,9 +20,23 @@ namespace FitnessON
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            //this.Initialize();
+            this.Initialize();
             this.InitializeData();
-            //this.OpenMainWindow();
+            this.OpenMainWindow();
+        }
+
+        private void Initialize()
+        {
+            ViewService.RegisterView(typeof(MainWindowViewModel), typeof(MainWindow));
+        }
+
+        private void OpenMainWindow()
+        {
+            MainWindow mainWindow = new MainWindow();
+            MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
+
+            ViewService.AddMainWindowToOpened(mainWindowViewModel, mainWindow);
+            ViewService.ShowDialog(mainWindowViewModel);
         }
 
         private void InitializeData()
