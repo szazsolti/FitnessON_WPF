@@ -80,11 +80,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Common\IAdminProfileContent.cs" />
+    <Compile Include="Common\IEntriesListingWithFilterContent.cs" />
     <Compile Include="Common\IFitnessContent.cs" />
+    <Compile Include="Common\ILeaseListingWithFilterContent.cs" />
     <Compile Include="Common\ILoginContent.cs" />
     <Compile Include="Common\IProfileContent.cs" />
     <Compile Include="Common\NotificationClass.cs" />
     <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Common\IUserListingContent.cs" />
     <Compile Include="Common\Utility.cs" />
     <Compile Include="Common\ViewService.cs" />
     <Compile Include="Logic\Controller.cs" />
@@ -100,15 +104,28 @@
     <Compile Include="Model\LeaseTypes.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\DBContext\FitnessDB.cs" />
+    <Compile Include="ViewModel\AdminProfileViewModel.cs" />
+    <Compile Include="ViewModel\EntriesListingWithFilterViewModel.cs" />
+    <Compile Include="View\LeaseListingWithFilter.xaml.cs">
+      <DependentUpon>LeaseListingWithFilter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\LeaseListingWithFilterViewModel.cs" />
     <Compile Include="ViewModel\LoginScreenViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="ViewModel\UserListingViewModel.cs" />
     <Compile Include="ViewModel\UserProfileViewModel.cs" />
+    <Compile Include="View\AdminProfile.xaml.cs">
+      <DependentUpon>AdminProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EntriesListingWithFilter.xaml.cs">
+      <DependentUpon>EntriesListingWithFilter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\FitnessONContentSelector.cs" />
     <Compile Include="View\LoginScreen.xaml.cs">
       <DependentUpon>LoginScreen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PersonCollection.xaml.cs">
-      <DependentUpon>PersonCollection.xaml</DependentUpon>
+    <Compile Include="View\UserListing.xaml.cs">
+      <DependentUpon>UserListing.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UserProfile.xaml.cs">
       <DependentUpon>UserProfile.xaml</DependentUpon>
@@ -125,6 +142,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\LeaseListingWithFilter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AdminProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EntriesListingWithFilter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\FitnessONContentTemplates.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -133,11 +162,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PersonCollection.xaml">
+    <Page Include="View\Style.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Style.xaml">
+    <Page Include="View\UserListing.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

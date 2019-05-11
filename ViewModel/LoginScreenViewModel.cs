@@ -56,7 +56,7 @@ namespace FitnessON.ViewModel
             set;
         }
 
-        public string Header => "Login";
+        public string Header => "Bejelentkezés";
 
         public void VerifyLoginCommandExecute()
         {

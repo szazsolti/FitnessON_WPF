@@ -5,11 +5,9 @@ D:\Dokumentumok\Negyed ev\DotNet\Projekt\obj\Debug\GeneratedInternalTypeHelper.g
 D:\Dokumentumok\Negyed ev\DotNet\Projekt\obj\Debug\MVVMApplication_MarkupCompile.cache
 D:\Dokumentumok\Negyed ev\DotNet\Projekt\obj\Debug\MVVMApplication_MarkupCompile.lref
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\MainWindow.g.cs
-D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\PersonCollection.g.cs
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\App.g.cs
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\MainWindow.baml
-D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\PersonCollection.baml
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.csproj.GenerateResource.cache
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.csproj.CoreCompileInputs.cache
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.csproj.CopyComplete
@@ -55,3 +53,11 @@ D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.pdb
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\App.baml
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\FitnessONContentTemplates.baml
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\Style.baml
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\AdminProfile.g.cs
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\AdminProfile.baml
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\LeaseListingWithFilter.g.cs
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\EntriesListingWithFilter.g.cs
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\UserListing.g.cs
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\LeaseListingWithFilter.baml
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\EntriesListingWithFilter.baml
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\UserListing.baml
