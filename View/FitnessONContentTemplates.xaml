@@ -11,5 +11,9 @@
     <DataTemplate x:Key="ProfileTemplate" DataType="x:Type types:IProfileContent">
         <userControls:UserProfile/>
     </DataTemplate>
+
+    <DataTemplate x:Key="ListUserLeasesTemplate" DataType="x:Type types:IListUserLeasesContent">
+        <userControls:ListUserLeases/>
+    </DataTemplate>
     
 </ResourceDictionary>

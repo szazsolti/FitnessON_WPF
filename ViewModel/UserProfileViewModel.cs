@@ -15,7 +15,7 @@ namespace FitnessON.ViewModel
 
         public UserProfileViewModel()
         {
-
+            this.OpenLeasesCommand = new RelayCommand(this.OpenLeasesCommandExecute);
         }
 
         public User User
@@ -77,5 +77,16 @@ namespace FitnessON.ViewModel
         }
 
         public string Header => "Saját profilom";
+
+        public RelayCommand OpenLeasesCommand
+        {
+            get;
+            set;
+        }
+
+        public void OpenLeasesCommandExecute()
+        {
+            MainWindowViewModel.Instance.SetUserToListUserLeases(this.loggedInUser);
+        }
     }
 }

@@ -72,6 +72,14 @@ namespace FitnessON.ViewModel
             this.Contents.Remove(this.Contents.First());
         }
 
+        public void SetUserToListUserLeases(User user)
+        {
+            ListUserLeasesViewModel listUserLeasesViewModel = new ListUserLeasesViewModel();
+            listUserLeasesViewModel.User = user;
+            this.Contents.Add(listUserLeasesViewModel);
+
+        }
+
         /*
         Business _business;
         private User _person;

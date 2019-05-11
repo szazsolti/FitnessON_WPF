@@ -21,6 +21,10 @@ namespace FitnessON.View
             {
                 return Application.Current.MainWindow.TryFindResource("ProfileTemplate") as DataTemplate;
             }
+            else if (item is IListUserLeasesContent)
+            {
+                return Application.Current.MainWindow.TryFindResource("ListUserLeasesTemplate") as DataTemplate;
+            }
             return null;
         }
     }

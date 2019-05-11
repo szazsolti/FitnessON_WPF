@@ -78,7 +78,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Common\Converters\LeaseStatusConverter.cs" />
     <Compile Include="Common\IFitnessContent.cs" />
+    <Compile Include="Common\IListUserLeasesContent.cs" />
     <Compile Include="Common\ILoginContent.cs" />
     <Compile Include="Common\IProfileContent.cs" />
     <Compile Include="Common\NotificationClass.cs" />
@@ -98,10 +100,14 @@
     <Compile Include="Model\LeaseTypes.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\DBContext\FitnessDB.cs" />
+    <Compile Include="ViewModel\ListUserLeasesViewModel.cs" />
     <Compile Include="ViewModel\LoginScreenViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\UserProfileViewModel.cs" />
     <Compile Include="View\FitnessONContentSelector.cs" />
+    <Compile Include="View\ListUserLeases.xaml.cs">
+      <DependentUpon>ListUserLeases.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LoginScreen.xaml.cs">
       <DependentUpon>LoginScreen.xaml</DependentUpon>
     </Compile>
@@ -124,6 +130,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\FitnessONContentTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ListUserLeases.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

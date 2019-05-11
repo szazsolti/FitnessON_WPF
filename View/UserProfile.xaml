@@ -110,7 +110,8 @@
             Grid.Row="8" Grid.Column="1" 
             VerticalAlignment="Top"
             HorizontalAlignment="Stretch"
-            Content="Bérletek kezelése">
+            Content="Bérletek kezelése"
+            Command="{Binding OpenLeasesCommand}">
         </Button>
 
 

@@ -60,3 +60,5 @@ D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.pdb
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\App.baml
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\FitnessONContentTemplates.baml
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\Style.baml
+D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\ListUserLeases.g.cs
+D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\ListUserLeases.baml
