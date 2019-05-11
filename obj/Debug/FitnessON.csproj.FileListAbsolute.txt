@@ -68,3 +68,9 @@ D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\UserListing.g.cs
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\LeaseListingWithFilter.baml
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\EntriesListingWithFilter.baml
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\UserListing.baml
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\ListUserLeases.g.cs
+D:\Dokumentumok\Negyed ev\DotNet\Pro\bin\Debug\EntityFramework.dll
+D:\Dokumentumok\Negyed ev\DotNet\Pro\bin\Debug\EntityFramework.SqlServer.dll
+D:\Dokumentumok\Negyed ev\DotNet\Pro\bin\Debug\EntityFramework.xml
+D:\Dokumentumok\Negyed ev\DotNet\Pro\bin\Debug\EntityFramework.SqlServer.xml
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\ListUserLeases.baml

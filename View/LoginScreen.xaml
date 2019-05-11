@@ -61,7 +61,7 @@
             Grid.ColumnSpan="3"
             Grid.RowSpan="3"
             Margin="3"
-            Text="Készítette: Zsabó Zsolt és Sólyom Zsolt"
+            Text="Készítette: Szabó Zsolt és Sólyom Zsolt"
             HorizontalAlignment="Center"
             VerticalAlignment="Bottom">
         </TextBlock>
