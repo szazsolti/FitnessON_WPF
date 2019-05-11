@@ -11,12 +11,15 @@ namespace FitnessON.ViewModel
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using System.Windows;
+
     //MainWindowViewModel:NotificationClass
     public class MainWindowViewModel : NotificationClass
     {
         public static Controller Controller;
         private ObservableCollection<IFitnessContent> contents;
         private IFitnessContent selectedContent;
+        private bool leaseIsOpened = false;
 
         public MainWindowViewModel()
         {
@@ -74,9 +77,15 @@ namespace FitnessON.ViewModel
 
         public void SetUserToListUserLeases(User user)
         {
-            ListUserLeasesViewModel listUserLeasesViewModel = new ListUserLeasesViewModel();
-            listUserLeasesViewModel.User = user;
-            this.Contents.Add(listUserLeasesViewModel);
+            //if (!Application.Current.Windows.OfType<ListUserLeasesViewModel>().Any())
+            if(!leaseIsOpened)
+            {
+                ListUserLeasesViewModel listUserLeasesViewModel = new ListUserLeasesViewModel();
+                listUserLeasesViewModel.User = user;
+                this.Contents.Add(listUserLeasesViewModel);
+                leaseIsOpened = true;
+            }
+            
 
         }
 

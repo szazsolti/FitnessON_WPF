@@ -60,17 +60,22 @@ namespace FitnessON.ViewModel
 
         public void VerifyLoginCommandExecute()
         {
+            bool exist = false;
             foreach (var item in users)
             {
                 if(item.Card_Id == card_Id)
                 {
-                    Console.WriteLine("OK!");
                     userLoggedIn = item;
                     if (this.userLoggedIn != null)
                     {
+                        exist = true;
                         MainWindowViewModel.Instance.SetUserToProfile(this.userLoggedIn);
                     }
                 }
+            }
+            if (!exist)
+            {
+                System.Windows.MessageBox.Show("A megadott azonosító nem érvényes!","Hiba történt");
             }
         }
 
