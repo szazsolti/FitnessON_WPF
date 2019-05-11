@@ -1,6 +1,4 @@
-﻿using FitnessON.Infra;
-using FitnessON.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,14 +16,13 @@ using System.Windows.Shapes;
 namespace FitnessON.View
 {
     /// <summary>
-    /// Interaction logic for PersonCollection.xaml
+    /// Interaction logic for UserListingDataGrid.xaml
     /// </summary>
-    public partial class PersonCollection : UserControl
+    public partial class UserListingDataGrid : UserControl
     {
-        public PersonCollection()
+        public UserListingDataGrid()
         {
             InitializeComponent();
-            
         }
     }
 }

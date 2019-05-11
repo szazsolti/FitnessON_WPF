@@ -2,7 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Model",
+    "\\Model\\DBContext",
     "\\ViewModel"
   ],
+  "SelectedNode": "\\bin",
   "PreviewInSolutionExplorer": false
 }

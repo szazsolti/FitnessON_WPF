@@ -25,7 +25,7 @@ namespace FitnessON.Model.DBContext
         {
             context.User.Add(new User { Id = 1, Name = "Pistike", Phone = "+40757485983", Email="pistike@admin.com", Card_Id="1as58e597d", Picture = "https://i.ibb.co/5rdrFNS/Jerry-Mouse.png", Permission="admin"});
             context.User.Add(new User { Id = 2, Name = "Joska", Phone = "+40754859553", Email = "joska@user.com", Card_Id = "i5h2f58r2d5", Picture = "https://i.ibb.co/zPTPtmP/tom.png", Permission = "user" });
-            context.User.Add(new User { Id = 3, Name = "Gazsi", Phone = "+40751412598", Email = "Gazsi@user.com", Card_Id = "gazsi", Picture = "https://i.ibb.co/QXX7cD6/fb.jpg", Permission = "user" });
+            context.User.Add(new User { Id = 3, Name = "Gazsi", Phone = "+40751412598", Email = "Gazsi@user.com", Card_Id = "gazsi", Picture = "https://i.ibb.co/mSVHsDT/lumpy.png", Permission = "user" });
         }
 
         private void AddNumberOfEntriesLeases(FitnessDB context) {
