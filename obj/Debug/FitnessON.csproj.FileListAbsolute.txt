@@ -79,3 +79,5 @@ D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.csproj.CoreCompileInput
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.csproj.CopyComplete
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.exe
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.pdb
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.csprojAssemblyReference.cache
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.csproj.ResolveComReference.cache

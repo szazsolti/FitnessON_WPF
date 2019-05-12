@@ -94,22 +94,33 @@ namespace FitnessON.ViewModel
         public void SetLeaseListing()
         {
             LeaseListingWithFilterViewModel leaseListingWithFilterView = new LeaseListingWithFilterViewModel();
-            this.Contents.Add(leaseListingWithFilterView);
-            addHeader(leaseListingWithFilterView.Header);
+            if (!checkIfHeaderIsOpened(leaseListingWithFilterView.Header))
+            {
+                this.Contents.Add(leaseListingWithFilterView);
+                addHeader(leaseListingWithFilterView.Header);
+            }   
         }
 
         public void SetUserListing()
         {
             UserListingViewModel userListingViewModel = new UserListingViewModel();
-            this.Contents.Add(userListingViewModel);
-            addHeader(userListingViewModel.Header);
+            if (!checkIfHeaderIsOpened(userListingViewModel.Header))
+            {
+                this.Contents.Add(userListingViewModel);
+                addHeader(userListingViewModel.Header);
+            }
+
+                
         }
 
         public void SetEntriesListing()
         {
             EntriesListingWithFilterViewModel entriesListingWithFilterViewModel = new EntriesListingWithFilterViewModel();
-            this.Contents.Add(entriesListingWithFilterViewModel);
-            addHeader(entriesListingWithFilterViewModel.Header);
+            if (!checkIfHeaderIsOpened(entriesListingWithFilterViewModel.Header))
+            {
+                this.Contents.Add(entriesListingWithFilterViewModel);
+                addHeader(entriesListingWithFilterViewModel.Header);
+            }            
         }
         public void SetUserToListUserLeases(User user)
         {
