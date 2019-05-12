@@ -92,11 +92,9 @@
     <Compile Include="Common\NotificationClass.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\IUserListingContent.cs" />
-    <Compile Include="Common\Utility.cs" />
     <Compile Include="Common\ViewService.cs" />
     <Compile Include="Logic\Controller.cs" />
     <Compile Include="Logic\Data.cs" />
-    <Compile Include="Model\Business.cs" />
     <Compile Include="Model\DBContext\DBInitializer.cs" />
     <Compile Include="Model\IntermediateLease.cs" />
     <Compile Include="Model\Lease.cs" />

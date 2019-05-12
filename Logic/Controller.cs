@@ -31,6 +31,19 @@
             {
                 l.Add(item.Lease);
             }
+            foreach (var item in l)
+            {
+                if(item != null)
+                {
+                    Console.WriteLine(item.ToString());
+                }
+                else
+                {
+                    Console.WriteLine("Olyan null hogy csak na");
+                }
+                    
+            }
+            
             return l;
         }
 
