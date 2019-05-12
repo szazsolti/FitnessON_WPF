@@ -15,5 +15,17 @@
     <DataTemplate x:Key="ListUserLeasesTemplate" DataType="x:Type types:IListUserLeasesContent">
         <userControls:ListUserLeases/>
     </DataTemplate>
+
+    <DataTemplate x:Key="AdminProfileTemplate" DataType="x:Type types:IAdminProfileContent">
+        <userControls:AdminProfile/>
+    </DataTemplate>
+
+    <DataTemplate x:Key="EntriesListingWithFilterTemplate" DataType="x:Type types:IEntriesListingWithFilterContent">
+        <userControls:EntriesListingWithFilter/>
+    </DataTemplate>
+
+    <DataTemplate x:Key="LeaseListingWithFilterTemplate" DataType="x:Type types:ILeaseListingWithFilterContent">
+        <userControls:LeaseListingWithFilter/>
+    </DataTemplate>
     
 </ResourceDictionary>
