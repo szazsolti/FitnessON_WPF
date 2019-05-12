@@ -27,5 +27,8 @@
     <DataTemplate x:Key="LeaseListingWithFilterTemplate" DataType="x:Type types:ILeaseListingWithFilterContent">
         <userControls:LeaseListingWithFilter/>
     </DataTemplate>
-    
+
+    <DataTemplate x:Key="UserListingTemplate" DataType="x:Type types:IUserListingContent">
+        <userControls:UserListing/>
+    </DataTemplate>
 </ResourceDictionary>
