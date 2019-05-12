@@ -22,7 +22,7 @@
                 VerticalAlignment="Center"
                 Margin="2"
                 MinWidth="100"
-                Content="Alkalmaz"
+                Content="Frisstés"
                 Command="{Binding RefreshUsers}">
             </Button>
             <Button 
@@ -30,6 +30,7 @@
                 VerticalAlignment="Center"
                 Margin="2"
                 MinWidth="100"
+                Command="{Binding ExportData}"
                 Content="Exportálás">
             </Button>
         </StackPanel>
@@ -41,7 +42,14 @@
                   IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Azonosító" Width="*" Binding="{Binding Id}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Profilkép" Width="*" Binding="{Binding Picture}"></DataGridTextColumn>
+                <DataGridHyperlinkColumn Header="Profilkép link" Width="*" Binding="{Binding Picture}"></DataGridHyperlinkColumn>
+                <DataGridTemplateColumn Header="Profilkép" Width="SizeToCells" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Picture}" MaxHeight="75"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="Név" Width="*" Binding="{Binding Name}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Telefonszám" Width="*" Binding="{Binding Phone}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Email cím" Width="*" Binding="{Binding Email}"></DataGridTextColumn>

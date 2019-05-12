@@ -80,3 +80,5 @@ D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.csproj.CopyComplete
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.exe
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.pdb
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.csproj.ResolveComReference.cache
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.csprojAssemblyReference.cache
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.csproj.ResolveComReference.cache
