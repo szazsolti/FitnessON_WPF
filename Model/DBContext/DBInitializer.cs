@@ -67,6 +67,7 @@ namespace FitnessON.Model.DBContext
         private void AddIntermediateLease(FitnessDB context)
         {
             context.IntermediateLeases.Add(new IntermediateLease { Lease_Id = 1, Card_Id = "1as58e597d" });
+            context.IntermediateLeases.Add(new IntermediateLease { Lease_Id = 1, Card_Id = "admin" });
         }
     }
 }

@@ -25,7 +25,10 @@
         public List<Lease> GetUserLeases(string card_Id)
         {
             //this.fitnessDB.Leases.Include("IntermediateLease").Where(a => a.Id == card_Id).ToList() ?? new List<Lease>();
-            List<IntermediateLease> il = this.fitnessDB.IntermediateLeases.Include("Lease").Where(vt => vt.Card_Id == card_Id).ToList();
+
+            List<IntermediateLease> il = new List<IntermediateLease>();
+            //il = this.fitnessDB.IntermediateLeases.Include("Lease").Where(vt => vt.Card_Id == card_Id).ToList();
+            Console.WriteLine("Intermediate: " + il.Count);
             List<Lease> l = new List<Lease>();
             foreach (var item in il)
             {

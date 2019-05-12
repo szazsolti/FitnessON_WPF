@@ -114,9 +114,9 @@ namespace FitnessON.ViewModel
         public void SetUserToListUserLeases(User user)
         {
             ListUserLeasesViewModel listUserLeasesViewModel = new ListUserLeasesViewModel();
+            listUserLeasesViewModel.User = user;
             if (!checkIfHeaderIsOpened(listUserLeasesViewModel.Header))
             {
-                listUserLeasesViewModel.User = user; 
                 this.Contents.Add(listUserLeasesViewModel);
                 addHeader(listUserLeasesViewModel.Header);
             }

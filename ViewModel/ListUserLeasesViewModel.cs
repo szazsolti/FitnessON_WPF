@@ -1,5 +1,6 @@
 ﻿using FitnessON.Common;
 using FitnessON.Infra;
+using FitnessON.Logic;
 using FitnessON.Model;
 using System;
 using System.Collections.Generic;
@@ -12,11 +13,12 @@ namespace FitnessON.ViewModel
     public class ListUserLeasesViewModel : NotificationClass, IListUserLeasesContent
     {
         private User user;
-
+        private List<Lease> leases = new List<Lease>();
 
         public ListUserLeasesViewModel()
         {
-
+            GetLeases();
+            //Console.WriteLine("User: " + user.Name);
         }
 
 
@@ -33,7 +35,11 @@ namespace FitnessON.ViewModel
             }
         }
 
-
+        public void GetLeases()
+        {
+            this.leases = Data.Controller.GetUserLeases(this.user.Card_Id);
+            Console.WriteLine("Berletek szama: " + leases.Count);
+        }
 
         public string Header => "Bérleteim";
     }
