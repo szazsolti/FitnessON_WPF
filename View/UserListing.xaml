@@ -22,7 +22,7 @@
                 VerticalAlignment="Center"
                 Margin="2"
                 MinWidth="100"
-                Content="Alkalmaz"
+                Content="Frisstés"
                 Command="{Binding RefreshUsers}">
             </Button>
             <Button 
