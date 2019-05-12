@@ -18,9 +18,9 @@ namespace FitnessON.View
     /// <summary>
     /// Interaction logic for UserListingDataGrid.xaml
     /// </summary>
-    public partial class UserListingDataGrid : UserControl
+    public partial class UserListing : UserControl
     {
-        public UserListingDataGrid()
+        public UserListing()
         {
             InitializeComponent();
         }

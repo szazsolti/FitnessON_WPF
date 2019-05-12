@@ -18,9 +18,9 @@ namespace FitnessON.View
     /// <summary>
     /// Interaction logic for EntriesListingDataGridWithFilter.xaml
     /// </summary>
-    public partial class EntriesListingDataGridWithFilter : UserControl
+    public partial class EntriesListingWithFilter : UserControl
     {
-        public EntriesListingDataGridWithFilter()
+        public EntriesListingWithFilter()
         {
             InitializeComponent();
         }

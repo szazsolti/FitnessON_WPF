@@ -78,11 +78,14 @@ namespace FitnessON.ViewModel
 
         }
 
+
+
         private void SetAdminToProfile(User user)
         {
             if (user.Permission.Equals("admin"))
             {
                 AdminProfileViewModel adminProfileViewModel = new AdminProfileViewModel();
+                adminProfileViewModel.Admin = user;
                 this.Contents.Add(adminProfileViewModel);
                 addHeader(adminProfileViewModel.Header);
             }
