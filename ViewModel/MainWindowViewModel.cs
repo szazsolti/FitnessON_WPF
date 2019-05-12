@@ -84,7 +84,8 @@ namespace FitnessON.ViewModel
             {
                 AdminProfileViewModel adminProfileViewModel = new AdminProfileViewModel();
                 this.Contents.Add(adminProfileViewModel);
-                addHeader(adminProfileViewModel.Header);            }
+                addHeader(adminProfileViewModel.Header);
+            }
         }
 
         public void SetLeaseListing()
