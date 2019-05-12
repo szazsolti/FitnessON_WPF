@@ -22,11 +22,14 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
+        
+        
         <Button 
             Grid.Row="0" Grid.Column="0"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Center"
             Margin="15"
+            Command="{Binding OpenUserListing}"
             Content="Ügyfelek listázása">
         </Button>
 
@@ -35,6 +38,7 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Center"
             Margin="15"
+            Command="{Binding OpenLeaseListing}"
             Content="Bérletek listázása">
         </Button>
 
@@ -43,8 +47,19 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Center"
             Margin="15"
+            Command="{Binding OpenEntriesListing}"
             Content="Belépések listázása">
         </Button>
+
+        <Image 
+            Grid.Row="1"
+            Grid.RowSpan="5"
+            Grid.ColumnSpan="3"
+            Margin="2"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Center"
+            Source = "https://i.ibb.co/hMSYLFh/img-325788.png" >
+        </Image>
 
 
     </Grid>
