@@ -83,7 +83,6 @@
     <Compile Include="Common\IListUserLeasesContent.cs" />
     <Compile Include="Common\IAdminProfileContent.cs" />
     <Compile Include="Common\IEntriesListingWithFilterContent.cs" />
-    <Compile Include="Common\IFitnessContent.cs" />
     <Compile Include="Common\ILeaseListingWithFilterContent.cs" />
     <Compile Include="Common\ILoginContent.cs" />
     <Compile Include="Common\IProfileContent.cs" />

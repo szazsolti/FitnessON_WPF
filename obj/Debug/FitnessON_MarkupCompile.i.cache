@@ -10,17 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\App.xaml
-7-1590324189
+10642335395
 
-401336085114
+52-304713695
 16-647025113
-MainWindow.xaml;View\FitnessONContentTemplates.xaml;View\ListUserLeases.xaml;View\LoginScreen.xaml;View\PersonCollection.xaml;View\Style.xaml;View\UserProfile.xaml;
-D:\Dokumentumok\Negyed ev\DotNet\Pro\App.xaml
-9-100849402
+MainWindow.xaml;View\LeaseListingWithFilter.xaml;View\AdminProfile.xaml;View\EntriesListingWithFilter.xaml;View\FitnessONContentTemplates.xaml;View\ListUserLeases.xaml;View\LoginScreen.xaml;View\Style.xaml;View\UserListing.xaml;View\UserProfile.xaml;
 
-442106146135
-16-1637338375
-MainWindow.xaml;View\LeaseListingWithFilter.xaml;View\AdminProfile.xaml;View\EntriesListingWithFilter.xaml;View\FitnessONContentTemplates.xaml;View\LoginScreen.xaml;View\Style.xaml;View\UserListing.xaml;View\UserProfile.xaml;
-
-False
+True
 

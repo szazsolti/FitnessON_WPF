@@ -1,10 +1,13 @@
 ﻿
 FD:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\App.xaml;;
 FD:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\MainWindow.xaml;;
+FD:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\View\LeaseListingWithFilter.xaml;;
+FD:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\View\AdminProfile.xaml;;
+FD:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\View\EntriesListingWithFilter.xaml;;
 FD:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\View\FitnessONContentTemplates.xaml;;
-FD:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\View\LoginScreen.xaml;;
-FD:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\View\PersonCollection.xaml;;
-FD:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\View\Style.xaml;;
-FD:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\View\UserProfile.xaml;;
 FD:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\View\ListUserLeases.xaml;;
+FD:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\View\LoginScreen.xaml;;
+FD:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\View\Style.xaml;;
+FD:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\View\UserListing.xaml;;
+FD:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\View\UserProfile.xaml;;
 
