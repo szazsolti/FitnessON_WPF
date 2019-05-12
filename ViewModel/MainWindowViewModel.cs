@@ -11,12 +11,15 @@ namespace FitnessON.ViewModel
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using System.Windows;
+
     //MainWindowViewModel:NotificationClass
     public class MainWindowViewModel : NotificationClass
     {
         public static Controller Controller;
         private ObservableCollection<IFitnessContent> contents;
         private IFitnessContent selectedContent;
+        private List<string> openedHeaders = new List<string>();
 
         public MainWindowViewModel()
         {
@@ -59,7 +62,6 @@ namespace FitnessON.ViewModel
             this.Contents = new ObservableCollection<IFitnessContent>();
             IFitnessContent loginScreenViewModel = new LoginScreenViewModel();
             this.Contents.Add(loginScreenViewModel);
-
             this.SelectedContent = this.Contents.First();
         }
 
@@ -70,112 +72,63 @@ namespace FitnessON.ViewModel
             this.Contents.Add(userProfileViewModel);
             this.selectedContent = this.Contents.Last();
             this.Contents.Remove(this.Contents.First());
+            addHeader(userProfileViewModel.Header);
+            SetAdminToProfile(user);
+
+
         }
 
+        private void SetAdminToProfile(User user)
+        {
+            if (user.Permission.Equals("admin"))
+            {
+                AdminProfileViewModel adminProfileViewModel = new AdminProfileViewModel();
+                this.Contents.Add(adminProfileViewModel);
+                addHeader(adminProfileViewModel.Header);
+            }
+        }
+
+        public void SetLeaseListing()
+        {
+            LeaseListingWithFilterViewModel leaseListingWithFilterView = new LeaseListingWithFilterViewModel();
+            this.Contents.Add(leaseListingWithFilterView);
+            addHeader(leaseListingWithFilterView.Header);
+        }
+
+        public void SetUserListing()
+        {
+            UserListingViewModel userListingViewModel = new UserListingViewModel();
+            this.Contents.Add(userListingViewModel);
+            addHeader(userListingViewModel.Header);
+        }
+
+        public void SetEntriesListing()
+        {
+            EntriesListingWithFilterViewModel entriesListingWithFilterViewModel = new EntriesListingWithFilterViewModel();
+            this.Contents.Add(entriesListingWithFilterViewModel);
+            addHeader(entriesListingWithFilterViewModel.Header);
+        }
         public void SetUserToListUserLeases(User user)
         {
             ListUserLeasesViewModel listUserLeasesViewModel = new ListUserLeasesViewModel();
-            listUserLeasesViewModel.User = user;
-            this.Contents.Add(listUserLeasesViewModel);
-
-        }
-
-        /*
-        Business _business;
-        private User _person;
-        public EventHandler ShowMessageBox = delegate { };
-        public MainWindowViewModel()
-        {          
-            _business = new Business();
-            PersonCollection = new ObservableCollection<User>(_business.Get());
-        }
-
-        private ObservableCollection<User> personCollection;
-        public ObservableCollection<User> PersonCollection
-        {
-            get { return personCollection; }
-            set { personCollection = value;
-                OnProprtyChanged();
+            if (!checkIfHeaderIsOpened(listUserLeasesViewModel.Header))
+            {
+                listUserLeasesViewModel.User = user; 
+                this.Contents.Add(listUserLeasesViewModel);
+                addHeader(listUserLeasesViewModel.Header);
             }
-        }
-        public User SelectedPerson
-        {
-            get
-            {
-                return _person;
-            }
-            set
-            {
-                _person = value;
-                OnProprtyChanged();
-            }
+            
+
         }
 
-
-        public RelayCommand Add
+        private void addHeader(string headerName)
         {
-            get
-            {
-                return new RelayCommand(AddPerson, true);
-            }        
+            this.openedHeaders.Add(headerName);
         }
-
-        private void AddPerson()
+       private bool checkIfHeaderIsOpened(string headerName)
         {
-            try
-            {
-                SelectedPerson = new User();                       
-            }
-            catch (Exception ex)
-            {
-                ShowMessageBox(this, new MessageEventArgs()
-                {
-                    Message = ex.Message
-                });
-            }            
+            return this.openedHeaders.Contains(headerName);
+            
         }
-
-        public RelayCommand Save
-        {
-            get
-            {
-                return new RelayCommand(SavePerson, true);
-            }
-        }
-
-        private void SavePerson()
-        {
-            try
-            {
-                _business.Update(SelectedPerson);
-                PersonCollection = new ObservableCollection<User>(_business.Get());
-                ShowMessageBox(this, new MessageEventArgs()
-                {
-                    Message = "Changes are saved !"
-                });
-            }
-            catch (Exception ex)
-            {
-                ShowMessageBox(this, new MessageEventArgs()
-                {
-                    Message = ex.Message
-                });
-            }               
-          
-        }
-
-        public RelayCommand Delete
-        {
-            get
-            {
-                return new RelayCommand(DeletePerson, true);
-            }
-        }
-
-        private void DeletePerson()
-        {
-            _business.Delete(SelectedPerson);
-        }
-    }*/
     }
 }
