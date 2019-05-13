@@ -1,5 +1,6 @@
 ﻿using FitnessON.Common;
 using FitnessON.Infra;
+using FitnessON.Logic;
 using FitnessON.Model;
 using Microsoft.Win32;
 using System;
@@ -50,11 +51,20 @@ namespace FitnessON.ViewModel
             {
                 //Console.WriteLine(userName + " " + phoneNumber + " " + emailAddress + " " + cardNumber);
                 User user = new User();
+                Card card = new Card();
+                int indexCard = Data.Controller.GetCards().Last().Id;
+                int indexUser = Data.Controller.GetUsers().Last().Id;
+                card.Id = indexCard + 1;
+                card.CardNumber = cardNumber;
+
+                user.Id = indexUser + 1;
                 user.Name = userName;
                 user.Phone = phoneNumber;
                 user.Email = emailAddress;
-                user.Card_Id = cardNumber;
+                user.Card_Id = card.Id;
                 user.Picture = imagePath;
+                user.Permission = "user";
+                Data.Controller.InsertUser(user, card);
                 ClearData();
             } 
 

@@ -48,19 +48,6 @@ namespace FitnessON.ViewModel
             }
         }
 
-        public List<Lease> UserLeases
-        {
-            get
-            {
-                return this.leases;
-            }
-            set
-            {
-                this.leases = value;
-                this.OnProprtyChanged();
-            }
-        }
-
         private void TimestampToDate()
         {
             System.DateTime dateTime = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);

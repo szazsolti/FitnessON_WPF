@@ -109,5 +109,14 @@
             return leases;
         }
 
+        public void InsertUser(User user, Card card)
+        {
+            //string insertCard = "INSERT INTO Card(Id, CardNumber) values("+card.Id + ", " +card.CardNumber + ")";
+            //string insertUser = "INSERT INTO User(Id, Name, Phone, Email, Card_Id, Picture, Permission) values("+user.Id + ", " +user.Name + ", " + user.Phone + ", " + user.Email + ", " + +user.Card_Id + ", " +user.Picture + ", " + user.Permission + ")";
+            this.fitnessDB.Card.Add(card);
+            this.fitnessDB.User.Add(user);
+            this.fitnessDB.SaveChanges();
+        }
+
     }
 }

@@ -101,7 +101,6 @@
       <DependentUpon>201905131520553_FitnessONDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\Business.cs" />
     <Compile Include="Model\Card.cs" />
     <Compile Include="Model\DBContext\DBInitializer.cs" />
     <Compile Include="Model\IntermediateLease.cs" />
