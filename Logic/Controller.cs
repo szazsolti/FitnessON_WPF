@@ -18,23 +18,95 @@
 
         public List<User> GetUsers()
         {
-            //Console.WriteLine(GetUserLeases("gazsi").First().StartValidity);
             return this.fitnessDB.User.ToList();
         }
 
-        public List<Lease> GetUserLeases(string card_Id)
-        {
-            //this.fitnessDB.Leases.Include("IntermediateLease").Where(a => a.Id == card_Id).ToList() ?? new List<Lease>();
 
-            List<IntermediateLease> il = new List<IntermediateLease>();
-            //il = this.fitnessDB.IntermediateLeases.Include("Lease").Where(vt => vt.Card_Id == card_Id).ToList();
-            Console.WriteLine("Intermediate: " + il.Count);
-            List<Lease> l = new List<Lease>();
-            foreach (var item in il)
+        public string GetCardNumber(int cardID)
+        {
+            return this.fitnessDB.Card.Where(c => c.Id == cardID).ToList().First().CardNumber;
+        }
+
+        public List<Card> GetCards()
+        {
+            return this.fitnessDB.Card.ToList();
+        }
+
+        public List<PeriodLease> GetPeriodLeases()
+        {
+            return this.fitnessDB.PeriodLeases.ToList();
+        }
+
+        public List<NumberOfEntriesLease> GetNumberOfEntriesLeases()
+        {
+            return this.fitnessDB.NumberOfEntriesLeases.ToList();
+        }
+
+        public List<MixLease> GetMixLeases()
+        {
+            List<MixLease> mixLeases = this.fitnessDB.MixLeases.ToList();
+            List<PeriodLease> periodLeases = GetPeriodLeases();
+            List<NumberOfEntriesLease> numberOfEntries = GetNumberOfEntriesLeases();
+
+            foreach (var item in mixLeases)
             {
-                l.Add(item.Lease);
+                foreach (var periodItem in periodLeases)
+                {
+                    if(item.PeriodLease_Id == periodItem.Id)
+                    {
+                        item.PeriodLease = periodItem;
+                        continue; 
+                    }
+                }
             }
-            return l;
+
+            foreach (var item in mixLeases)
+            {
+                foreach (var numberItem in numberOfEntries)
+                {
+                    if(item.NumberOfEntriesLease_Id == numberItem.Id)
+                    {
+                        item.NumberOfEntriesLease = numberItem;
+                        continue;
+                    }
+                }
+            }
+
+            return mixLeases;
+        }
+
+
+        public List<Lease> GetUserLeases(int card_Id)
+        {
+            List<Lease> leases =  this.fitnessDB.Leases.Where(lease => lease.Card_Id == card_Id).OrderBy(m=> m.MixLease.Price).ToList();
+            List<MixLease> mixLeases = GetMixLeases();
+            List<Card> cards = GetCards();
+
+            foreach (var item in leases)
+            {
+                foreach (var mixItem in mixLeases)
+                {
+                    if(item.MixLeases_Id == mixItem.Id)
+                    {
+                        item.MixLease = mixItem;
+                        continue;
+                    }
+                }
+            }
+
+            foreach (var item in leases)
+            {
+                foreach (var itemCard in cards)
+                {
+                    if(item.Card_Id == itemCard.Id)
+                    {
+                        item.Card = itemCard;
+                        continue;
+                    }
+                }
+            }
+
+            return leases;
         }
 
     }

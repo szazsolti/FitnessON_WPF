@@ -13,9 +13,9 @@ namespace FitnessON.Model
         public int Log_Id { get; set; }
         public long Time { get; set; }
         public int User_Id { get; set; }
-        public User User { get; set; }
+        public virtual User User { get; set; }
         public int Lease_Id { get; set; }
-        public Lease Lease { get; set; }
+        public virtual Lease Lease { get; set; }
         public string Message { get; set; }
     }
 }

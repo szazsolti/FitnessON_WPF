@@ -16,8 +16,9 @@ namespace FitnessON.Model
 
         public DbSet<User> User { get; set; }
         public DbSet<Lease> Leases { get; set; }
-        public DbSet<IntermediateLease> IntermediateLeases { get; set; }
-        public DbSet<LeaseTypes> LeaseTypes { get; set; }
+        public DbSet<Card> Card { get; set; }
+        //public DbSet<IntermediateLease> IntermediateLeases { get; set; }
+        //public DbSet<LeaseTypes> LeaseTypes { get; set; }
         public DbSet<Logs> Logs { get; set; }
         public DbSet<MixLease> MixLeases { get; set; }
         public DbSet<NumberOfEntriesLease> NumberOfEntriesLeases { get; set; }

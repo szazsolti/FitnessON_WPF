@@ -11,10 +11,13 @@ namespace FitnessON.Model
     {
         [Key]
         public int Id { get; set; }
-        public int LeaseTypes_Id { get; set; }
-        public LeaseTypes LeaseTypes { get; set; }
-        public long StartValidity { get; set; }
-        public long EndValidity { get; set; }
+        public int MixLeases_Id { get; set; }
+        public virtual MixLease MixLease { get; set; }
+        public int Card_Id { get; set; }
+        public virtual Card Card { get; set; }
+        public string StartValidity { get; set; }
+        public string EndValidity { get; set; }
         public int NumberOfEntries { get; set; }
+        public string Name { get; set; }
     }
 }

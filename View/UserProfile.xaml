@@ -98,7 +98,7 @@
         </TextBlock>
 
         <TextBlock 
-            Grid.Row="7" Grid.Column="1" 
+            Grid.Row="7" Grid.Column="1"
             Text="{Binding CardNumber}"
             FontSize="15"
             FontWeight="DemiBold"

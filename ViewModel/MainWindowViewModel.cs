@@ -124,8 +124,10 @@ namespace FitnessON.ViewModel
         }
         public void SetUserToListUserLeases(User user)
         {
+            //Console.WriteLine("User in set: " + user.Name);
             ListUserLeasesViewModel listUserLeasesViewModel = new ListUserLeasesViewModel();
             listUserLeasesViewModel.User = user;
+            
             if (!checkIfHeaderIsOpened(listUserLeasesViewModel.Header))
             {
                 this.Contents.Add(listUserLeasesViewModel);

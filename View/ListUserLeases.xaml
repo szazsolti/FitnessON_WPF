@@ -14,10 +14,17 @@
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Azonosító" Width="*" Binding="{Binding Id}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Érvényesség" Width="*" Binding="{Binding LeaseTypes.Name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Kezdeti dátum" Width="*" Binding="{Binding StartValidity}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Lejárati dátum" Width="*" Binding="{Binding EndValidity}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Belépések száma" Width="*" Binding="{Binding NumberOfEntries}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Bérlet neve" Width="*" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Érvényesség kezdete" Width="*" Binding="{Binding StartValidity}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Érvényesség vége" Width="*" Binding="{Binding EndValidity}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Maradt belépések száma" Width="*" Binding="{Binding NumberOfEntries}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Belépés/nap" Width="*" Binding="{Binding MixLease.Enter_day}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Kártyaszám" Width="*" Binding="{Binding Card.CardNumber}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Belépés kezdete (óra)" Width="*" Binding="{Binding MixLease.StartHour}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Belépés lejárta (óra)" Width="*" Binding="{Binding MixLease.EndHour}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Összes belépések száma" Width="*" Binding="{Binding MixLease.NumberOfEntriesLease.Quantity}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Összes napok száma" Width="*" Binding="{Binding MixLease.PeriodLease.NumberOfDays}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ár" Width="*" Binding="{Binding MixLease.Price}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

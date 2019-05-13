@@ -1,5 +1,6 @@
 ﻿using FitnessON.Common;
 using FitnessON.Infra;
+using FitnessON.Logic;
 using FitnessON.Model;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace FitnessON.ViewModel
 {
     public class UserProfileViewModel : NotificationClass, IProfileContent
     {
-        private User loggedInUser;
+        private User loggedInUser = new User();
 
         public UserProfileViewModel()
         {
@@ -62,7 +63,7 @@ namespace FitnessON.ViewModel
         {
             get
             {
-                return this.loggedInUser.Card_Id;
+                return Data.Controller.GetCardNumber(this.loggedInUser.Card_Id);
             }
 
         }
@@ -84,7 +85,7 @@ namespace FitnessON.ViewModel
             set;
         }
 
-        public void OpenLeasesCommandExecute()
+        private void OpenLeasesCommandExecute()
         {
             MainWindowViewModel.Instance.SetUserToListUserLeases(this.loggedInUser);
         }

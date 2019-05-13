@@ -12,12 +12,13 @@ namespace FitnessON.Model
         [Key]
         public int Id { get; set; }
         public int PeriodLease_Id { get; set; }
-        public PeriodLease PeriodLease { get; set; }
+        public virtual PeriodLease PeriodLease { get; set; }
         public int StartHour { get; set; }
         public int EndHour { get; set; }
         public string Days { get; set; }
         public int NumberOfEntriesLease_Id { get; set; }
-        public NumberOfEntriesLease NumberOfEntriesLease { get; set; }
+        public virtual NumberOfEntriesLease NumberOfEntriesLease { get; set; }
         public int Enter_day { get; set; }
+        public double Price { get; set; }
     }
 }

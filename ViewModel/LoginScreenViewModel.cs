@@ -15,10 +15,12 @@ namespace FitnessON.ViewModel
         private List<User> users;
         private String card_Id;
         private User userLoggedIn = new User();
+        private List<Card> cards;
         
         public LoginScreenViewModel()
         {
             this.users = Data.Controller.GetUsers();
+            this.cards = Data.Controller.GetCards();
             this.VerifyLoginCommand = new RelayCommand(this.VerifyLoginCommandExecute, this.VerifyLoginCommandCanExecute);
             //Console.WriteLine(users.ToList().Count);
 
@@ -61,16 +63,23 @@ namespace FitnessON.ViewModel
         public void VerifyLoginCommandExecute()
         {
             bool exist = false;
-            foreach (var item in users)
+            foreach (var item in cards)
             {
-                if(item.Card_Id == card_Id)
+                if(item.CardNumber == card_Id)
                 {
-                    userLoggedIn = item;
-                    if (this.userLoggedIn != null)
+                    foreach (var user in users)
                     {
-                        exist = true;
-                        MainWindowViewModel.Instance.SetUserToProfile(this.userLoggedIn);
+                        if(user.Card_Id == item.Id)
+                        {
+                            if (this.userLoggedIn != null)
+                            {
+                                exist = true;
+                                MainWindowViewModel.Instance.SetUserToProfile(user);
+                            }
+                        }
                     }
+
+                    
                 }
             }
             if (!exist)
