@@ -82,6 +82,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Common\Converters\LeaseStatusConverter.cs" />
+    <Compile Include="Common\IAddUserContent.cs" />
     <Compile Include="Common\IFitnessContent.cs" />
     <Compile Include="Common\IListUserLeasesContent.cs" />
     <Compile Include="Common\IAdminProfileContent.cs" />
@@ -105,9 +106,13 @@
     <Compile Include="Model\LeaseTypes.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\DBContext\FitnessDB.cs" />
+    <Compile Include="ViewModel\AddUserViewModel.cs" />
     <Compile Include="ViewModel\ListUserLeasesViewModel.cs" />
     <Compile Include="ViewModel\AdminProfileViewModel.cs" />
     <Compile Include="ViewModel\EntriesListingWithFilterViewModel.cs" />
+    <Compile Include="View\AddUser.xaml.cs">
+      <DependentUpon>AddUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LeaseListingWithFilter.xaml.cs">
       <DependentUpon>LeaseListingWithFilter.xaml</DependentUpon>
     </Compile>
@@ -147,6 +152,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\AddUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\LeaseListingWithFilter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -16,8 +16,14 @@ namespace FitnessON.ViewModel
             this.OpenUserListing = new RelayCommand(this.OpenUserListingTab);
             this.OpenLeaseListing = new RelayCommand(this.OpenLeaseListingTab);
             this.OpenEntriesListing = new RelayCommand(this.OpenEntriesListingTab);
+            this.OpenAddUser = new RelayCommand(OpenAddUserTab);
         }
 
+        public RelayCommand OpenAddUser
+        {
+            get;
+            set;
+        }
         public RelayCommand OpenUserListing
         {
             get;
@@ -42,6 +48,14 @@ namespace FitnessON.ViewModel
                 {
                         MainWindowViewModel.Instance.SetUserListing();
                 }  
+        }
+
+        public void OpenAddUserTab()
+        {
+            if (this.adminUser.Permission.Equals("admin"))
+            {
+                MainWindowViewModel.Instance.AddUserTab();
+            }
         }
 
         public void OpenLeaseListingTab()

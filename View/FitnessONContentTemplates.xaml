@@ -31,4 +31,9 @@
     <DataTemplate x:Key="UserListingTemplate" DataType="x:Type types:IUserListingContent">
         <userControls:UserListing/>
     </DataTemplate>
+
+    <DataTemplate x:Key="AddUserTemplate" DataType="x:Type types:IAddUserContent">
+        <userControls:AddUser/>
+    </DataTemplate>
+
 </ResourceDictionary>
