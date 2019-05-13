@@ -87,3 +87,4 @@ D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\AddUser.g.cs
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\AddUser.baml
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\AddUser.g.cs
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\AddUser.baml
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.Migrations.FitnessONDB.resources
