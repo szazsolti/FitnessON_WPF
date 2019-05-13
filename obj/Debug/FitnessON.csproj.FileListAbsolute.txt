@@ -83,3 +83,5 @@ D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.exe
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.pdb
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.csprojAssemblyReference.cache
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.Migrations.FitnessONDB.resources
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\AddUser.g.cs
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\AddUser.baml

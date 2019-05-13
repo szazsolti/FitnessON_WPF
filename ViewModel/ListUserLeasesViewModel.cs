@@ -20,6 +20,18 @@ namespace FitnessON.ViewModel
 
         }
 
+        public List<Lease> UserLeases
+        {
+            get
+            {
+                return this.leases;
+            }
+            set
+            {
+                this.leases = value;
+                this.OnProprtyChanged();
+            }
+        }
 
         public User User
         {

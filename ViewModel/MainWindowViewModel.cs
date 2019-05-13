@@ -74,11 +74,17 @@ namespace FitnessON.ViewModel
             this.Contents.Remove(this.Contents.First());
             addHeader(userProfileViewModel.Header);
             SetAdminToProfile(user);
-
-
         }
 
-
+        public void AddUserTab()
+        {
+            AddUserViewModel addUserViewModel = new AddUserViewModel();
+            if (!checkIfHeaderIsOpened(addUserViewModel.Header))
+            {
+                this.Contents.Add(addUserViewModel);
+                addHeader(addUserViewModel.Header);
+            }
+        }
 
         private void SetAdminToProfile(User user)
         {
