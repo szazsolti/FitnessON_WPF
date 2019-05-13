@@ -6,8 +6,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace FitnessON.ViewModel
 {
@@ -19,6 +21,7 @@ namespace FitnessON.ViewModel
         private string emailAddress;
         private string phoneNumber;
         private string cardNumber;
+
 
         public AddUserViewModel()
         {
@@ -43,17 +46,64 @@ namespace FitnessON.ViewModel
 
         public void CreateUserProfile()
         {
-            //System.Windows.MessageBox.Show("Semmi sincs megadva, mert semmi sincs megírva....", "Nincs semmi baj");
-            Console.WriteLine(userName + " " + phoneNumber + " " + emailAddress + " " + cardNumber);
-            User user= new User();
-            user.Name = userName;
-            user.Phone = phoneNumber;
-            user.Email = emailAddress;
-            user.Card_Id = cardNumber;
-            user.Picture = imagePath;
-            clearData();
+            if (ValidateData())
+            {
+                //Console.WriteLine(userName + " " + phoneNumber + " " + emailAddress + " " + cardNumber);
+                User user = new User();
+                user.Name = userName;
+                user.Phone = phoneNumber;
+                user.Email = emailAddress;
+                user.Card_Id = cardNumber;
+                user.Picture = imagePath;
+                ClearData();
+            } 
 
         }
+
+        private bool ValidateData()
+        {
+            string message = "";
+            if( userName == null || userName.ToString().Length == 0 ||
+                emailAddress == null || emailAddress.ToString().Length == 0 || 
+                cardNumber == null || cardNumber.ToString().Length == 0){
+                message += "-Minden mezőt ki kell tölteni!\n";
+            }
+           if(phoneNumber == null || phoneNumber.Length > 12 || phoneNumber.Length <= 10 )
+            {
+                message += "-Érvénytelen telefonszám!\n";
+            }
+            if (emailAddress == null || !IsValidEmail(emailAddress))
+            {
+                message += "-Érvénytelen emailcím!\n";
+            }
+            if(userName == null || userName.Length < 3)
+            {
+                message += "-Túl rövid a felhasználónév!\n";
+            }
+            if (message.Length != 0)
+            {
+                System.Windows.MessageBox.Show(message, "Helytelen adatok!");
+                return false;
+            }
+            return true;
+        }
+
+       
+
+        public bool IsValidEmail(string emailaddress)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(emailaddress);
+
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
+
         public void OpenImageSelector()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -66,7 +116,7 @@ namespace FitnessON.ViewModel
             }
         }
 
-        private void clearData()
+        private void ClearData()
         {
             UserName = "";
             PhoneNumber = "";
@@ -95,7 +145,18 @@ namespace FitnessON.ViewModel
             }
             set
             {
-                this.phoneNumber = value;
+                if(value.ToString().Length == 0 )
+                {
+                    this.phoneNumber = value;
+                }
+                else if ("0123456789".Contains(value.ToString().Last()))
+                {
+                    this.phoneNumber = value;
+                }
+                else if( value.ToString().Length == 1 && value.ToString().First().Equals('+'))
+                {
+                    this.phoneNumber = value;
+                }
                 this.OnProprtyChanged();
             }
         }
