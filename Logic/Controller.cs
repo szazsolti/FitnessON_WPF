@@ -18,7 +18,21 @@
 
         public List<User> GetUsers()
         {
-            return this.fitnessDB.User.ToList();
+            List<User> users = this.fitnessDB.User.ToList();
+            List<Card> cards = GetCards();
+
+            foreach (var item in users)
+            {
+                foreach (var itemCard in cards)
+                {
+                    if(item.Card_Id == itemCard.Id)
+                    {
+                        item.Card = itemCard;
+                    }
+                }
+            }
+
+            return users;
         }
 
 
