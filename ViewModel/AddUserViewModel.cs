@@ -65,6 +65,7 @@ namespace FitnessON.ViewModel
                 user.Picture = imagePath;
                 user.Permission = "user";
                 Data.Controller.InsertUser(user, card);
+
                 ClearData();
             } 
 

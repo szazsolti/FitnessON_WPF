@@ -43,7 +43,7 @@ namespace FitnessON.ViewModel
 
         public void GetUsers()
         {
-            this.users = Data.Controller.GetUsers();
+            this.Users = Data.Controller.GetUsers();
         }
 
         public RelayCommand ExportData

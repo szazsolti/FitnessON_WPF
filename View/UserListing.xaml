@@ -53,7 +53,7 @@
                 <DataGridTextColumn Header="Név" Width="*" Binding="{Binding Name}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Telefonszám" Width="*" Binding="{Binding Phone}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Email cím" Width="*" Binding="{Binding Email}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Kártyaszám" Width="*" Binding="{Binding Card_Id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Kártyaszám" Width="*" Binding="{Binding Card.CardNumber}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Jogosultság" Width="*" Binding="{Binding Permission}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
