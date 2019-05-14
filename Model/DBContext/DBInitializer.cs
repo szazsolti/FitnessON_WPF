@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FitnessON.Model.DBContext
 {
-    public class DBInitializer : DropCreateDatabaseAlways<FitnessDB>
+    public class DBInitializer : DropCreateDatabaseIfModelChanges<FitnessDB>
     {
         protected override void Seed(FitnessDB context)
         {

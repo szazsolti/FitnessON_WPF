@@ -222,14 +222,28 @@
 
         public List<Logs> GetLogs()
         {
-            return this.fitnessDB.Logs.ToList();
+            return this.fitnessDB.Logs.ToList(); ;
+        }
+
+        public List<Logs> GetLogsWithUserFilter(string username)
+        {
+            return this.fitnessDB.Logs.Where(l => l.User.Name == username).ToList();
+        }
+
+        public List<Logs> GetLogsWithCardFilter(string cardNumber)
+        {
+            return this.fitnessDB.Logs.Where(l => l.User.Card.CardNumber == cardNumber).ToList();
+        }
+
+        public List<Logs> GetLogsWithTypeFilter(string type)
+        {
+            return this.fitnessDB.Logs.Include("User").Where(l => l.Lease.MixLease.Name == type).ToList();
         }
 
         public void InsertToLog(User user, Lease lease,string message)
         {
             Logs log = new Logs();
             List<Logs> logs = GetLogs();
-            DateTime dateTime = DateTime.UtcNow.Date;
 
             try
             {
@@ -240,7 +254,7 @@
                 log.Log_Id = 1;
             }
 
-            log.Time = dateTime.ToString("yyyy-MM-dd hh:mm:ss");
+            log.Time = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
             log.User_Id = user.Id;
             log.User = user;
             log.Lease_Id = lease.Id;
@@ -250,13 +264,19 @@
             this.fitnessDB.SaveChanges();
         }
 
-        public void UpdateLeaseNumberOfEntriesAsync(Lease lease)
+        public List<Lease> GetLeases()
+        {
+            return this.fitnessDB.Leases.ToList();
+        }
+
+        public void UpdateLeaseNumberOfEntriesAsync(int numberOfEntries, int id, bool selected)
         {
             //Console.WriteLine("Berlet neve update: " + lease.Name);
             //await this.fitnessDB.Database.ExecuteSqlCommandAsync(@"Update [Leases] SET NumberOfEntries = {0} WHERE Id = {1}", new object[] { lease.NumberOfEntries, lease.Id });
-            this.fitnessDB.Database.ExecuteSqlCommand(@"Update [Leases] SET NumberOfEntries = {0} WHERE Id = {1}", new object[] { lease.NumberOfEntries, lease.Id });
+            this.fitnessDB.Database.ExecuteSqlCommand(@"Update [Leases] SET NumberOfEntries = {0} WHERE Id = {1}", numberOfEntries, id);
+            this.fitnessDB.Database.ExecuteSqlCommand(@"Update [Leases] SET inUse = {0} WHERE Id = {1}", selected, id);
             this.fitnessDB.SaveChanges();
-            
+
         }
 
     }

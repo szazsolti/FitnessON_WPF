@@ -25,7 +25,6 @@
                   Grid.Row="0" Grid.Column="0"
                   ItemsSource="{Binding UserLeases}"
                   SelectedItem="{Binding SelectedLease}"
-                  
                   AutoGenerateColumns="False"
                   IsReadOnly="True">
 
