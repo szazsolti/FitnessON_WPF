@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\
 FitnessON
 none
 false
 DEBUG;TRACE
-D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\App.xaml
-11-562958850
+D:\Dokumentumok\Negyed ev\DotNet\Pro\App.xaml
+12-1192376290
 
-521683917172
-191038296438
-MainWindow.xaml;View\AddUser.xaml;View\LeaseListingWithFilter.xaml;View\AdminProfile.xaml;View\EntriesListingWithFilter.xaml;View\FitnessONContentTemplates.xaml;View\ListUserLeases.xaml;View\LoginScreen.xaml;View\Style.xaml;View\UserListing.xaml;View\UserProfile.xaml;
+55-1819658716
+19-1006666411
+MainWindow.xaml;View\AddUser.xaml;View\CreateLease.xaml;View\LeaseListingWithFilter.xaml;View\AdminProfile.xaml;View\EntriesListingWithFilter.xaml;View\FitnessONContentTemplates.xaml;View\ListUserLeases.xaml;View\LoginScreen.xaml;View\Style.xaml;View\UserListing.xaml;View\UserProfile.xaml;
 
 False
 

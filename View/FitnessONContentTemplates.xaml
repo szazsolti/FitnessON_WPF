@@ -28,12 +28,17 @@
         <userControls:LeaseListingWithFilter/>
     </DataTemplate>
 
-    <DataTemplate x:Key="UserListingTemplate" DataType="x:Type types:IUserListingContent">
+    <DataTemplate x:Key="UserListingTemplate" DataType="x:Type types:IUserLeaseContent">
         <userControls:UserListing/>
     </DataTemplate>
 
     <DataTemplate x:Key="AddUserTemplate" DataType="x:Type types:IAddUserContent">
         <userControls:AddUser/>
     </DataTemplate>
+
+    <DataTemplate x:Key="CreateLeaseTemplate" DataType="x:Type types:ICreateUserLeaseContent">
+        <userControls:CreateLease/>
+    </DataTemplate>
+    
 
 </ResourceDictionary>
