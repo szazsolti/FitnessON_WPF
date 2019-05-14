@@ -91,6 +91,7 @@
     <Compile Include="Common\ILoginContent.cs" />
     <Compile Include="Common\IProfileContent.cs" />
     <Compile Include="Common\ICreateUserLeaseContent.cs" />
+    <Compile Include="Common\IRenewLeaseContent.cs" />
     <Compile Include="Common\NotificationClass.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\IUserListingContent.cs" />
@@ -118,6 +119,7 @@
     <Compile Include="ViewModel\AdminProfileViewModel.cs" />
     <Compile Include="ViewModel\EntriesListingWithFilterViewModel.cs" />
     <Compile Include="ViewModel\CreateLeaseViewModel.cs" />
+    <Compile Include="ViewModel\RenewLeaseViewModel.cs" />
     <Compile Include="View\AddUser.xaml.cs">
       <DependentUpon>AddUser.xaml</DependentUpon>
     </Compile>
@@ -144,6 +146,9 @@
     </Compile>
     <Compile Include="View\LoginScreen.xaml.cs">
       <DependentUpon>LoginScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RenewLease.xaml.cs">
+      <DependentUpon>RenewLease.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UserListing.xaml.cs">
       <DependentUpon>UserListing.xaml</DependentUpon>
@@ -192,6 +197,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\LoginScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RenewLease.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

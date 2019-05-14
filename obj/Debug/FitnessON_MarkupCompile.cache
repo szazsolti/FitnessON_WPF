@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Dokumentumok\Negyed ev\DotNet\Pro\App.xaml
-12-1192376290
+13-1351006704
 
-55-1819658716
+58-1636649274
 19-1006666411
-MainWindow.xaml;View\AddUser.xaml;View\CreateLease.xaml;View\LeaseListingWithFilter.xaml;View\AdminProfile.xaml;View\EntriesListingWithFilter.xaml;View\FitnessONContentTemplates.xaml;View\ListUserLeases.xaml;View\LoginScreen.xaml;View\Style.xaml;View\UserListing.xaml;View\UserProfile.xaml;
+MainWindow.xaml;View\AddUser.xaml;View\CreateLease.xaml;View\LeaseListingWithFilter.xaml;View\AdminProfile.xaml;View\EntriesListingWithFilter.xaml;View\FitnessONContentTemplates.xaml;View\ListUserLeases.xaml;View\LoginScreen.xaml;View\RenewLease.xaml;View\Style.xaml;View\UserListing.xaml;View\UserProfile.xaml;
 
 False
 

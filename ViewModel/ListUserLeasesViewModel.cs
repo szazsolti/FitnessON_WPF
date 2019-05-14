@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace FitnessON.ViewModel
 {
@@ -22,8 +23,14 @@ namespace FitnessON.ViewModel
             this.RefreshLeasesCommand = new RelayCommand(this.GetLeasesExecute);
             this.LogInCommand = new RelayCommand(this.LogInExecute, this.LogInCanExecute);
             this.LogOutCommand = new RelayCommand(this.LogOutExecute, this.LogOutCanExecute);
+            this.RenewLeaseCommand = new RelayCommand(this.RenewExecute);
         }
 
+        public RelayCommand RenewLeaseCommand
+        {
+            get;
+            set;
+        }
         public RelayCommand RefreshLeasesCommand
         {
             get;
@@ -74,6 +81,13 @@ namespace FitnessON.ViewModel
             }
         }
 
+        public void RenewExecute()
+        {
+            if(this.selectedLease != null)
+            {
+                MainWindowViewModel.Instance.RenewLease(this.selectedLease);
+            }
+        }
         public void LogInExecute()
         {
             if(this.selectedLease != null)
@@ -154,11 +168,18 @@ namespace FitnessON.ViewModel
         {
             MainWindowViewModel.Instance.CreateNewLease(this.user);
         }
+        public static DateTime UnixTimeStampToDateTime(double unixTimeStamp)
+        {
+            System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
+            dtDateTime = dtDateTime.AddSeconds(unixTimeStamp).ToLocalTime();
+            return dtDateTime;
+        }
         private void TimestampToDate()
         {
             System.DateTime dateTime = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
             foreach (var item in this.UserLeases)
             {
+               // Console.WriteLine("date "+UnixTimeStampToDateTime(Convert.ToDouble(item.StartValidity)));
                 if (!item.StartValidity.Contains("-") && !item.StartValidity.Contains("/"))
                 {
                     dateTime = dateTime.AddSeconds(Convert.ToDouble(item.StartValidity));

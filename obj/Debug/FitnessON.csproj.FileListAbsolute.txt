@@ -92,3 +92,5 @@ D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.csproj.Copy
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.exe
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.pdb
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.csprojAssemblyReference.cache
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\RenewLease.g.cs
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\RenewLease.baml

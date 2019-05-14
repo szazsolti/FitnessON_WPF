@@ -39,6 +39,9 @@
     <DataTemplate x:Key="CreateLeaseTemplate" DataType="x:Type types:ICreateUserLeaseContent">
         <userControls:CreateLease/>
     </DataTemplate>
-    
+
+    <DataTemplate x:Key="RenewLeaseTemplate" DataType="x:Type types:IRenewLeaseContent">
+        <userControls:RenewLease/>
+    </DataTemplate>
 
 </ResourceDictionary>

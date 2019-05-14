@@ -49,6 +49,10 @@ namespace FitnessON.View
             {
                 return Application.Current.MainWindow.TryFindResource("CreateLeaseTemplate") as DataTemplate;
             }
+            else if (item is IRenewLeaseContent)
+            {
+                return Application.Current.MainWindow.TryFindResource("RenewLeaseTemplate") as DataTemplate;
+            }
             return null;
         }
     }
