@@ -43,6 +43,11 @@ D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.exe
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.pdb
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.csprojAssemblyReference.cache
 D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.csproj.ResolveComReference.cache
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\AddUser.g.cs
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\AddUser.baml
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.Migrations.FitnessONDB.resources
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\CreateLease.g.cs
+D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\CreateLease.baml
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\bin\Debug\FitnessON.exe.config
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\bin\Debug\FitnessON.exe
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\bin\Debug\FitnessON.pdb
@@ -52,6 +57,8 @@ D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\bin\Debug\EntityFramework.xml
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\bin\Debug\EntityFramework.SqlServer.xml
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.csproj.ResolveComReference.cache
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\MainWindow.g.cs
+D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\AddUser.g.cs
+D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\CreateLease.g.cs
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\LeaseListingWithFilter.g.cs
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\AdminProfile.g.cs
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\EntriesListingWithFilter.g.cs
@@ -65,6 +72,8 @@ D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON_MarkupCompi
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON_MarkupCompile.lref
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\App.baml
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\MainWindow.baml
+D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\AddUser.baml
+D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\CreateLease.baml
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\LeaseListingWithFilter.baml
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\AdminProfile.baml
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\EntriesListingWithFilter.baml
@@ -75,6 +84,7 @@ D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\Style.baml
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\UserListing.baml
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\UserProfile.baml
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.g.resources
+D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.Migrations.FitnessONDB.resources
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.Properties.Resources.resources
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.csproj.GenerateResource.cache
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.csproj.CoreCompileInputs.cache
@@ -82,11 +92,3 @@ D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.csproj.Copy
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.exe
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.pdb
 D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.csprojAssemblyReference.cache
-D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\FitnessON.Migrations.FitnessONDB.resources
-D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\AddUser.g.cs
-D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\AddUser.baml
-D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\AddUser.g.cs
-D:\Lecke\IV_ev\II felev\C#\Projekt\FitnessON_WPF\obj\Debug\View\AddUser.baml
-D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\FitnessON.Migrations.FitnessONDB.resources
-D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\CreateLease.g.cs
-D:\Dokumentumok\Negyed ev\DotNet\Pro\obj\Debug\View\CreateLease.baml

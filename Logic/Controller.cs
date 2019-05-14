@@ -144,14 +144,15 @@
             List<Logs> logs = GetLogs();
             DateTime dateTime = DateTime.UtcNow.Date;
 
-            if (logs.Count() != 0)
+            try
             {
-                log.Log_Id = logs.Max().Log_Id;
+                log.Log_Id = logs.Max().Log_Id + 1;
             }
-            else
+            catch(Exception e)
             {
                 log.Log_Id = 1;
             }
+
             log.Time = dateTime.ToString("yyyy-MM-dd hh:mm:ss");
             log.User_Id = user.Id;
             log.User = user;
@@ -160,6 +161,15 @@
             log.Message = message;
             this.fitnessDB.Logs.Add(log);
             this.fitnessDB.SaveChanges();
+        }
+
+        public void UpdateLeaseNumberOfEntriesAsync(Lease lease)
+        {
+            //Console.WriteLine("Berlet neve update: " + lease.Name);
+            //await this.fitnessDB.Database.ExecuteSqlCommandAsync(@"Update [Leases] SET NumberOfEntries = {0} WHERE Id = {1}", new object[] { lease.NumberOfEntries, lease.Id });
+            this.fitnessDB.Database.ExecuteSqlCommand(@"Update [Leases] SET NumberOfEntries = {0} WHERE Id = {1}", new object[] { lease.NumberOfEntries, lease.Id });
+            this.fitnessDB.SaveChanges();
+            
         }
 
     }

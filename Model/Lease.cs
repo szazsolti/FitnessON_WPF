@@ -18,6 +18,6 @@ namespace FitnessON.Model
         public string StartValidity { get; set; }
         public string EndValidity { get; set; }
         public int NumberOfEntries { get; set; }
-        public string Name { get; set; }
+        public bool inUse { get; set; }
     }
 }

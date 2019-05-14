@@ -20,5 +20,6 @@ namespace FitnessON.Model
         public virtual NumberOfEntriesLease NumberOfEntriesLease { get; set; }
         public int Enter_day { get; set; }
         public double Price { get; set; }
+        public string Name { get; set; }
     }
 }

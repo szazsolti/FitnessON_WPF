@@ -18,21 +18,35 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        
+
+        <Grid.Resources>
+            <Style TargetType="DataGridCell">
+                <Style.Triggers>
+                    <Trigger Property="DataGridCell.IsSelected" Value="True">
+                        <Setter Property="Background" Value="#FF0000" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+
         <DataGrid Margin="3"
                   Grid.ColumnSpan="4"
                   Grid.Row="0" Grid.Column="0"
                   ItemsSource="{Binding UserLeases}"
+                  SelectedItem="{Binding SelectedLease}"
+                  
                   AutoGenerateColumns="False"
                   IsReadOnly="True">
 
+            
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Azonosító" Width="*" Binding="{Binding Id}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Bérlet neve" Width="*" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Bérlet neve" Width="*" Binding="{Binding MixLease.Name}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Érvényesség kezdete" Width="*" Binding="{Binding StartValidity}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Érvényesség vége" Width="*" Binding="{Binding EndValidity}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Maradt belépések száma" Width="*" Binding="{Binding NumberOfEntries}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Belépés/nap" Width="*" Binding="{Binding MixLease.Enter_day}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Érvényes napokon" Width="*" Binding="{Binding MixLease.Days}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Kártyaszám" Width="*" Binding="{Binding Card.CardNumber}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Belépés kezdete (óra)" Width="*" Binding="{Binding MixLease.StartHour}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Belépés lejárta (óra)" Width="*" Binding="{Binding MixLease.EndHour}"></DataGridTextColumn>
