@@ -42,6 +42,25 @@
             return this.fitnessDB.Card.Where(c => c.Id == cardID).ToList().First().CardNumber;
         }
 
+        public List<int> GetEntriesNumber()
+        {
+            List<int> entries = new List<int>();
+            foreach (var item in this.fitnessDB.NumberOfEntriesLeases.ToList())
+            {
+                entries.Add(item.Quantity);
+            }
+            return entries;
+        }
+
+        public List<int> GetPeriodLeasesNumber()
+        {
+            List<int> days = new List<int>();
+            foreach (var item in this.fitnessDB.PeriodLeases.ToList())
+            {
+                days.Add(item.NumberOfDays);
+            }
+            return days;
+        }
         public List<Card> GetCards()
         {
             return this.fitnessDB.Card.ToList();
@@ -87,6 +106,74 @@
                 }
             }
 
+            return mixLeases;
+        }
+
+        public List<MixLease> GetMixLeasesValidityFilter(int valid)
+        {
+            List<PeriodLease> periodLeases = GetPeriodLeases();
+            List<NumberOfEntriesLease> numberOfEntries = GetNumberOfEntriesLeases();
+            int id = this.fitnessDB.PeriodLeases.Where(vt => vt.NumberOfDays == valid).ToList().First().Id;
+            List<MixLease> mixLeases = this.fitnessDB.MixLeases.Where(vt => vt.NumberOfEntriesLease_Id == id).ToList();
+
+            foreach (var item in mixLeases)
+            {
+                foreach (var periodItem in periodLeases)
+                {
+                    if (item.PeriodLease_Id == periodItem.Id)
+                    {
+                        item.PeriodLease = periodItem;
+                        break;
+                    }
+                }
+            }
+
+            foreach (var item in mixLeases)
+            {
+                foreach (var numberItem in numberOfEntries)
+                {
+                    if (item.NumberOfEntriesLease_Id == numberItem.Id && item.NumberOfEntriesLease.Quantity == valid)
+                    {
+                        item.NumberOfEntriesLease = numberItem;
+                        break;
+                    }
+                }
+            }
+            Console.WriteLine(id + " " + mixLeases.Count);
+            return mixLeases;
+        }
+
+        public List<MixLease> GetMixLeasesEntriesFilter(int entries)
+        {
+            List<PeriodLease> periodLeases = GetPeriodLeases();
+            List<NumberOfEntriesLease> numberOfEntries = GetNumberOfEntriesLeases();
+            int id = this.fitnessDB.NumberOfEntriesLeases.Where(vt => vt.Quantity == entries).ToList().First().Id;
+            List<MixLease> mixLeases = this.fitnessDB.MixLeases.Where(vt => vt.NumberOfEntriesLease_Id == id).ToList();
+
+            foreach (var item in mixLeases)
+            {
+                foreach (var periodItem in periodLeases)
+                {
+                    if (item.PeriodLease_Id == periodItem.Id)
+                    {
+                        item.PeriodLease = periodItem;
+                        break;
+                    }
+                }
+            }
+
+            foreach (var item in mixLeases)
+            {
+                foreach (var numberItem in numberOfEntries)
+                {
+                    if (item.NumberOfEntriesLease_Id == numberItem.Id && item.NumberOfEntriesLease.Quantity == entries)
+                    {
+                        item.NumberOfEntriesLease = numberItem;
+                        break;
+                    }
+                }
+            }
+            Console.WriteLine(id + " " + mixLeases.Count);
             return mixLeases;
         }
 

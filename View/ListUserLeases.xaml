@@ -86,7 +86,7 @@
             HorizontalAlignment="Stretch"
             Margin="5"
             Content="Kilépés"
-            Command="{Binding LogOutCommand}">
+            Command="{Binding NewLease}">
         </Button>
         
     </Grid>
