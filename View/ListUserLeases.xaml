@@ -19,15 +19,6 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Grid.Resources>
-            <Style TargetType="DataGridCell">
-                <Style.Triggers>
-                    <Trigger Property="DataGridCell.IsSelected" Value="True">
-                        <Setter Property="Background" Value="#FF0000" />
-                    </Trigger>
-                </Style.Triggers>
-            </Style>
-        </Grid.Resources>
 
         <DataGrid Margin="3"
                   Grid.ColumnSpan="4"
@@ -70,7 +61,7 @@
             HorizontalAlignment="Stretch"
             Margin="5"
             Content="Bérletvásárlás"
-            Command="{Binding NewLease}">
+            Command="{Binding NewLeaseCommand}">
         </Button>
         <Button 
             Grid.Row="1" Grid.Column="0" 
