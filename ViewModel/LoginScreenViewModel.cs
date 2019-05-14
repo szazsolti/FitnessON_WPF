@@ -75,6 +75,7 @@ namespace FitnessON.ViewModel
                             {
                                 exist = true;
                                 MainWindowViewModel.Instance.SetUserToProfile(user);
+
                             }
                         }
                     }

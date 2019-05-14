@@ -11,7 +11,7 @@ namespace FitnessON.Model
     {
         [Key]
         public int Log_Id { get; set; }
-        public long Time { get; set; }
+        public string Time { get; set; }
         public int User_Id { get; set; }
         public virtual User User { get; set; }
         public int Lease_Id { get; set; }

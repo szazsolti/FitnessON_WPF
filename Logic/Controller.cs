@@ -28,6 +28,7 @@
                     if(item.Card_Id == itemCard.Id)
                     {
                         item.Card = itemCard;
+                        break;
                     }
                 }
             }
@@ -69,7 +70,7 @@
                     if(item.PeriodLease_Id == periodItem.Id)
                     {
                         item.PeriodLease = periodItem;
-                        continue; 
+                        break; 
                     }
                 }
             }
@@ -81,7 +82,7 @@
                     if(item.NumberOfEntriesLease_Id == numberItem.Id)
                     {
                         item.NumberOfEntriesLease = numberItem;
-                        continue;
+                        break;
                     }
                 }
             }
@@ -103,7 +104,7 @@
                     if(item.MixLeases_Id == mixItem.Id)
                     {
                         item.MixLease = mixItem;
-                        continue;
+                        break;
                     }
                 }
             }
@@ -115,7 +116,7 @@
                     if(item.Card_Id == itemCard.Id)
                     {
                         item.Card = itemCard;
-                        continue;
+                        break;
                     }
                 }
             }
@@ -129,6 +130,35 @@
             //string insertUser = "INSERT INTO User(Id, Name, Phone, Email, Card_Id, Picture, Permission) values("+user.Id + ", " +user.Name + ", " + user.Phone + ", " + user.Email + ", " + +user.Card_Id + ", " +user.Picture + ", " + user.Permission + ")";
             this.fitnessDB.Card.Add(card);
             this.fitnessDB.User.Add(user);
+            this.fitnessDB.SaveChanges();
+        }
+
+        public List<Logs> GetLogs()
+        {
+            return this.fitnessDB.Logs.ToList();
+        }
+
+        public void InsertToLog(User user, Lease lease,string message)
+        {
+            Logs log = new Logs();
+            List<Logs> logs = GetLogs();
+            DateTime dateTime = DateTime.UtcNow.Date;
+
+            if (logs.Count() != 0)
+            {
+                log.Log_Id = logs.Max().Log_Id;
+            }
+            else
+            {
+                log.Log_Id = 1;
+            }
+            log.Time = dateTime.ToString("yyyy-MM-dd hh:mm:ss");
+            log.User_Id = user.Id;
+            log.User = user;
+            log.Lease_Id = lease.Id;
+            log.Lease = lease;
+            log.Message = message;
+            this.fitnessDB.Logs.Add(log);
             this.fitnessDB.SaveChanges();
         }
 
