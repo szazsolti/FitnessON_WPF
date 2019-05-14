@@ -52,6 +52,7 @@ namespace FitnessON.ViewModel
             set;
         }
 
+        
         public RelayCommand RefreshUsers
         {
             get;

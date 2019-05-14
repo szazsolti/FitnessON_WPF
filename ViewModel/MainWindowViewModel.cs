@@ -76,6 +76,16 @@ namespace FitnessON.ViewModel
             SetAdminToProfile(user);
         }
 
+        public void CreateNewLease(User user)
+        {
+            CreateLeaseViewModel createLeaseViewModel = new CreateLeaseViewModel();
+            if (!checkIfHeaderIsOpened(createLeaseViewModel.Header))
+            {
+                createLeaseViewModel.User = user;
+                this.Contents.Add(createLeaseViewModel);
+                addHeader(createLeaseViewModel.Header);
+            }
+        }
         public void AddUserTab()
         {
             AddUserViewModel addUserViewModel = new AddUserViewModel();

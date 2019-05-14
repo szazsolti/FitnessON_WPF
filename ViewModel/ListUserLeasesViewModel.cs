@@ -17,9 +17,34 @@ namespace FitnessON.ViewModel
 
         public ListUserLeasesViewModel()
         {
-
+            this.NewLease = new RelayCommand(this.CreateNewLeaseExecute);
+            this.RefreshLeases = new RelayCommand(this.GetLeasesExecute);
+            this.LogInCommand = new RelayCommand(this.LogInExecute);
+            this.LogOutCommand = new RelayCommand(this.LogOutExecute);
         }
 
+        public RelayCommand RefreshLeases
+        {
+            get;
+            set;
+        }
+
+        public RelayCommand LogInCommand
+        {
+            get;
+            set;
+        }
+
+        public RelayCommand LogOutCommand
+        {
+            get;
+            set;
+        }
+        public RelayCommand NewLease
+        {
+            get;
+            set;
+        }
         public List<Lease> UserLeases
         {
             get
@@ -42,18 +67,32 @@ namespace FitnessON.ViewModel
             set
             {
                 this.user = value;
-                GetLeases();
+                GetLeasesExecute();
                 TimestampToDate();
                 this.OnProprtyChanged();
             }
         }
 
+        public void LogInExecute()
+        {
+            
+        }
+
+        public void LogOutExecute()
+        {
+
+        }
+
+        public void CreateNewLeaseExecute()
+        {
+            MainWindowViewModel.Instance.CreateNewLease(this.user);
+        }
         private void TimestampToDate()
         {
             System.DateTime dateTime = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
-            foreach (var item in this.leases)
+            foreach (var item in this.UserLeases)
             {
-                if (!item.StartValidity.Contains("/"))
+                if (!item.StartValidity.Contains("-") && !item.StartValidity.Contains("/"))
                 {
                     dateTime = dateTime.AddSeconds(Convert.ToDouble(item.StartValidity));
                     string printDate = dateTime.ToShortDateString() + " " + dateTime.ToShortTimeString();
@@ -68,9 +107,9 @@ namespace FitnessON.ViewModel
             }
         }
 
-        public void GetLeases()
+        public void GetLeasesExecute()
         {
-            this.leases = Data.Controller.GetUserLeases(this.user.Card_Id);
+            this.UserLeases = Data.Controller.GetUserLeases(this.user.Card_Id);
             Console.WriteLine("Leases: " + leases.Count);
         }
 

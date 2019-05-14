@@ -69,7 +69,7 @@
                     if(item.PeriodLease_Id == periodItem.Id)
                     {
                         item.PeriodLease = periodItem;
-                        continue; 
+                        break; 
                     }
                 }
             }
@@ -81,7 +81,7 @@
                     if(item.NumberOfEntriesLease_Id == numberItem.Id)
                     {
                         item.NumberOfEntriesLease = numberItem;
-                        continue;
+                        break;
                     }
                 }
             }
@@ -103,7 +103,7 @@
                     if(item.MixLeases_Id == mixItem.Id)
                     {
                         item.MixLease = mixItem;
-                        continue;
+                        break;
                     }
                 }
             }
@@ -115,7 +115,7 @@
                     if(item.Card_Id == itemCard.Id)
                     {
                         item.Card = itemCard;
-                        continue;
+                        break;
                     }
                 }
             }

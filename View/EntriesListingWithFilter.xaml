@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Row="0">
-            <RadioButton GroupName="filer" Content="Ügyfél szerint" MinHeight="15" MinWidth="15"/>
+            <RadioButton GroupName="filer" Content="Ügyfél szerint" MinHeight="15" MinWidth="15" IsChecked="True"/>
             <RadioButton GroupName="filer" Content="Kártyaszám szerint" MinHeight="15" MinWidth="15"/>
             <RadioButton GroupName="filer" Content="Típus szerint" MinHeight="15" MinWidth="15"/>
             <RadioButton GroupName="filer" Content="Dátum szerint szerint" MinHeight="15" MinWidth="15"/>
