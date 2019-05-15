@@ -18,6 +18,8 @@ namespace FitnessON.ViewModel
         private List<int> entrieNumber;
         private List<int> periodLeases;
         private DateTime date;
+        private int entrieNumberIndex=-1;
+        private int periodNumberIndex=-1;
         private List<MixLease> mixleases;
 
         public string Header => "Bérletlértehozás";
@@ -25,6 +27,7 @@ namespace FitnessON.ViewModel
         public CreateLeaseViewModel()
         {
             this.CreateLeaseCommand = new RelayCommand(this.CreateLeaseExecute);
+            this.ListAllLeas = new RelayCommand(this.GetAllLeaseExecute);
             EntrieNumber = Data.Controller.GetEntriesNumber();
             PeriodLeases = Data.Controller.GetPeriodLeasesNumber();
             Mixleases = Data.Controller.GetMixLeases();
@@ -35,12 +38,38 @@ namespace FitnessON.ViewModel
         {
 
         }
+
+        public RelayCommand ListAllLeas { get; set; }
         public RelayCommand CreateLeaseCommand
         {
             get;
             set;
         }
 
+        public int EntrieNumberIndex
+        {
+            get
+            {
+                return this.entrieNumberIndex;
+            }
+            set
+            {
+                this.entrieNumberIndex = value;
+                this.OnProprtyChanged();
+            }
+        }
+        public int PeriodNumberIndex
+        {
+            get
+            {
+                return this.periodNumberIndex;
+            }
+            set
+            {
+                this.periodNumberIndex = value;
+                this.OnProprtyChanged();
+            }
+        }
         public List<MixLease> Mixleases
         {
             get
@@ -74,7 +103,11 @@ namespace FitnessON.ViewModel
             set
             {
                 this.entrieNumberItem = value;
-                Mixleases = Data.Controller.GetMixLeasesEntriesFilter(entrieNumberItem);
+                PeriodNumberIndex = -1;
+                if (entrieNumberItem >= 0)
+                {
+                    Mixleases = Data.Controller.GetMixLeasesEntriesFilter(entrieNumberItem);
+                }  
                 this.OnProprtyChanged();
             }
         }
@@ -87,8 +120,12 @@ namespace FitnessON.ViewModel
             }
             set
             {
+                EntrieNumberIndex = -1;
                 this.periodLeaseItem = value;
-                Mixleases = Data.Controller.GetMixLeasesValidityFilter(periodLeaseItem);
+                if(periodLeaseItem >= 0)
+                {
+                    Mixleases = Data.Controller.GetMixLeasesValidityFilter(periodLeaseItem);
+                }
                 this.OnProprtyChanged();
             }
         }
@@ -106,6 +143,12 @@ namespace FitnessON.ViewModel
             }
         }
 
+        public void GetAllLeaseExecute()
+        {
+            PeriodNumberIndex = -1;
+            EntrieNumberIndex = -1;
+            Mixleases = Data.Controller.GetMixLeases();
+        }
         public List<int> PeriodLeases
         {
             get

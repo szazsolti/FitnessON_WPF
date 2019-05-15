@@ -264,6 +264,52 @@
             this.fitnessDB.SaveChanges();
         }
 
+        public List<Lease> GetLeasesWithTypeFilter(string leaseName)
+        {
+            return this.fitnessDB.Leases.Where(vt => vt.MixLease.Name.Equals(leaseName)).ToList();
+        }
+
+        public List<Lease> GetInvalidLeases()
+        {
+            return this.fitnessDB.Leases.Where(vt => vt.NumberOfEntries == 0).ToList();
+        }
+
+        public List<Lease> GetLeasesWithStatusFilter(bool validity)
+        {
+            long currentTime = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
+            List<Lease> leases = new List<Lease>();
+            if (validity)
+            {
+                foreach (var item in GetLeases())
+                {
+                    if(TimestringToTimestamps(item.EndValidity) > currentTime)
+                    {
+                        leases.Add(item);
+                    }
+                }
+            }
+            else
+            {
+                foreach (var item in GetLeases())
+                {
+                    if (TimestringToTimestamps(item.EndValidity) < currentTime)
+                    {
+                        leases.Add(item);
+                    }
+                }
+            }
+            return leases;
+        }
+        public long TimestringToTimestamps(string time){
+            string[] dataParts = time.Replace('/', ' ').Replace('-', ' ').Replace(':', ' ').Replace('P', ' ').Replace('M', ' ').Replace('A', ' ').Split(' ');
+            if (dataParts.Count()<4){return 0;}
+            var toDate = new DateTime((Int32.Parse(dataParts[0])), (Int32.Parse(dataParts[1])), (Int32.Parse(dataParts[2])));
+            toDate.AddDays((Int32.Parse(dataParts[3])));//ora
+            toDate.AddDays((Int32.Parse(dataParts[4])));//perc
+            return long.Parse(toDate.Subtract(new DateTime(1970, 01, 01)).TotalSeconds.ToString());
+        }
+
+
         public List<Lease> GetLeases()
         {
             return this.fitnessDB.Leases.ToList();
