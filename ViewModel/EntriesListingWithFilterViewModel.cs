@@ -18,6 +18,7 @@ namespace FitnessON.ViewModel
         private bool card = false;
         private bool type =false;
         private bool date=false;
+        private string dateTime;
 
 
         public EntriesListingWithFilterViewModel()
@@ -27,6 +28,18 @@ namespace FitnessON.ViewModel
             this.ListAllCommand = new RelayCommand(this.ListAllCommandExecute);
         }
 
+        public string DateTime
+        {
+            get
+            {
+                return this.dateTime;
+            }
+            set
+            {
+                this.dateTime = Convert.ToDateTime(value).ToString("yyyy/MM/dd")+" 0:00 PM";
+                this.OnProprtyChanged();
+            }
+        }
         public List<Logs> Logs
         {
             get
@@ -132,7 +145,7 @@ namespace FitnessON.ViewModel
             }
             else if (date)
             {
-
+                this.Logs = Data.Controller.GetLogsWithDateFilter(DateTime);
             }
         }
 

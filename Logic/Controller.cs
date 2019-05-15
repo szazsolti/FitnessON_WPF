@@ -264,6 +264,15 @@
             this.fitnessDB.SaveChanges();
         }
 
+        public List<Logs> GetLogsWithDateFilter(string inputDate){
+            long date = TimestringToTimestamps(inputDate);
+            List <Logs> logs = new List<Logs>();
+            foreach (var item in this.fitnessDB.Logs.ToList()){
+                if (TimestringToTimestamps(item.Time) > date){
+                    logs.Add(item);
+                }
+            }return logs;
+        }
         public List<Lease> GetLeasesWithTypeFilter(string leaseName)
         {
             return this.fitnessDB.Leases.Where(vt => vt.MixLease.Name.Equals(leaseName)).ToList();
