@@ -9,7 +9,7 @@ namespace FitnessON.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
             ContextKey = "FitnessON.Model.FitnessDB";
         }
 

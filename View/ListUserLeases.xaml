@@ -20,14 +20,6 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Grid.Resources>
-            <Style TargetType="DataGridCell">
-                <Style.Triggers>
-                    <Trigger Property="DataGridCell.IsSelected" Value="True">
-                    </Trigger>
-                </Style.Triggers>
-            </Style>
-        </Grid.Resources>
 
         <DataGrid Margin="3"
                   Grid.ColumnSpan="5"
@@ -61,7 +53,7 @@
             HorizontalAlignment="Stretch"
             Margin="5"
             Content="Frissítés"
-            Command="{Binding RefreshLeases}">
+            Command="{Binding RefreshLeasesCommand}">
         </Button>
         <Button 
             Grid.Row="1" Grid.Column="4" 

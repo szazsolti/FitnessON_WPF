@@ -15,31 +15,82 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Row="0">
-            <RadioButton GroupName="filer" Content="Ügyfél szerint" MinHeight="15" MinWidth="15" IsChecked="True"/>
-            <RadioButton GroupName="filer" Content="Kártyaszám szerint" MinHeight="15" MinWidth="15"/>
-            <RadioButton GroupName="filer" Content="Típus szerint" MinHeight="15" MinWidth="15"/>
-            <RadioButton GroupName="filer" Content="Dátum szerint szerint" MinHeight="15" MinWidth="15"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+
+            <StackPanel Grid.Row="0">
+                <RadioButton GroupName="filer" Content="Ügyfél szerint" MinHeight="15" MinWidth="15" IsChecked="{Binding Client}"/>
+                <RadioButton GroupName="filer" Content="Kártyaszám szerint" MinHeight="15" MinWidth="15" IsChecked="{Binding Card}"/>
+                <RadioButton GroupName="filer" Content="Típus szerint" MinHeight="15" MinWidth="15" IsChecked="{Binding Type}"/>
+                <RadioButton GroupName="filer" Content="Dátum szerint szerint" MinHeight="15" MinWidth="15" IsChecked="{Binding Date}"/>
+  
+            </StackPanel>
             <Button 
+                    Grid.Row="2"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
                 Margin="5"
-                Content="Alkalmaz">
+                Content="Alkalmaz"
+                Command="{Binding ApplyFilterCommand}">
             </Button>
-        </StackPanel>
+            
+            <Button 
+                    Grid.Row="2"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="5"
+                Content="Összes"
+                Command="{Binding ListAllCommand}">
+            </Button>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                
+                <TextBox
+                    Grid.Row="2"
+                    Margin="5"
+                    Text="{Binding Path=InputText, UpdateSourceTrigger=PropertyChanged}"
+                    ></TextBox>
+                
+            </Grid>
+            
+            
 
+
+        </Grid>
+        
 
 
         <DataGrid Grid.Row="1" Grid.Column="0"
                   Margin="3"
-                  ItemsSource="{Binding VehicleType}"
+                  ItemsSource="{Binding Logs}"
                   AutoGenerateColumns="False"
-                  SelectedItem="{Binding SelectedVehicleType}" IsReadOnly="True">
+                  IsReadOnly="True">
 
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Ügyfél neve" Width="*" Binding="{Binding Model.Description}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Kártya azonosító" Width="*" Binding="{Binding Model.Description}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Érvényesség" Width="*" Binding="{Binding Model.Description}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ügyfél neve" Width="*" Binding="{Binding User.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Dátum" Width="*" Binding="{Binding Time}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Kártya azonosító" Width="*" Binding="{Binding User.Card.CardNumber}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Bérlet neve" Width="*" Binding="{Binding Lease.MixLease.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Érvényesség" Width="*" Binding="{Binding Lease.EndValidity}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Üzenet" Width="*" Binding="{Binding Message}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
 

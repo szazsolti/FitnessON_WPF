@@ -96,18 +96,24 @@ namespace FitnessON.ViewModel
                 if(selectedLease.NumberOfEntries == 2)
                 {
                     System.Windows.MessageBox.Show("Már csak egyszeri belépésre van lehetősége!", "Bérlete hamarosan lejár");
+                    int number = selectedLease.NumberOfEntries;
+                    int id = selectedLease.Id;
                     selectedLease.NumberOfEntries -= 1;
                     selectedLease.inUse = true;
-                    Data.Controller.UpdateLeaseNumberOfEntriesAsync(selectedLease);
+                    number -= 1;
+                    Data.Controller.UpdateLeaseNumberOfEntriesAsync(number, id, true);
                     Data.Controller.InsertToLog(user, selectedLease, "Belépett a(z) " + selectedLease.MixLease.Name + " nevű bérlettel.");
                     
                 }
                 else if (selectedLease.NumberOfEntries == 1)
                 {
                     System.Windows.MessageBox.Show("Ez az utolsó belépési lehetősége!", "Bérlete lejár");
+                    int number = selectedLease.NumberOfEntries;
+                    int id = selectedLease.Id;
                     selectedLease.NumberOfEntries -= 1;
                     selectedLease.inUse = true;
-                    Data.Controller.UpdateLeaseNumberOfEntriesAsync(selectedLease);
+                    number -= 1;
+                    Data.Controller.UpdateLeaseNumberOfEntriesAsync(number, id, true);
                     Data.Controller.InsertToLog(user, selectedLease, "Belépett a(z) " + selectedLease.MixLease.Name + " nevű bérlettel.");
                 }
                 else if (selectedLease.NumberOfEntries < 1)
@@ -117,9 +123,12 @@ namespace FitnessON.ViewModel
                 else
                 {
                     System.Windows.MessageBox.Show("Sikeres belépés!", "Jó testmozgást!");
+                    int number = selectedLease.NumberOfEntries;
+                    int id = selectedLease.Id;
                     selectedLease.NumberOfEntries -= 1;
                     selectedLease.inUse = true;
-                    Data.Controller.UpdateLeaseNumberOfEntriesAsync(selectedLease);
+                    number -= 1;
+                    Data.Controller.UpdateLeaseNumberOfEntriesAsync(number, id, true);
                     Data.Controller.InsertToLog(user, selectedLease, "Belépett a(z) " + selectedLease.MixLease.Name + " nevű bérlettel.");
                 }
             }
@@ -130,8 +139,10 @@ namespace FitnessON.ViewModel
             if (this.SelectedLease != null)
             {
                 System.Windows.MessageBox.Show("Köszönjük, hogy minket választott!", "Viszontlátásra");
+                int number = selectedLease.NumberOfEntries;
+                int id = selectedLease.Id;
                 selectedLease.inUse = false;
-                Data.Controller.UpdateLeaseNumberOfEntriesAsync(selectedLease);
+                Data.Controller.UpdateLeaseNumberOfEntriesAsync(number, id, false);
                 Data.Controller.InsertToLog(user, selectedLease, "Kilépett a(z) " + selectedLease.MixLease.Name + " nevű bérlettel.");
             }
         }
