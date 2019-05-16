@@ -108,13 +108,14 @@ namespace FitnessON.ViewModel
             }
         }
 
-        public void RenewLease(Lease selectedLease)
+        public void RenewLease(Lease selectedLease, User user)
         {
             RenewLeaseViewModel renewLeaseViewModel = new RenewLeaseViewModel();
             if (!checkIfHeaderIsOpened(renewLeaseViewModel.Header))
             {
                 this.Contents.Add(renewLeaseViewModel);
                 renewLeaseViewModel.SelectedLease = selectedLease;
+                renewLeaseViewModel.User = user;
                 addHeader(renewLeaseViewModel.Header);
             }
         }

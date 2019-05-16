@@ -17,10 +17,11 @@ namespace FitnessON.ViewModel
         private int periodLeaseItem;
         private List<int> entrieNumber;
         private List<int> periodLeases;
-        private DateTime date;
+        private string date;
         private int entrieNumberIndex=-1;
         private int periodNumberIndex=-1;
         private List<MixLease> mixleases;
+        private MixLease selectedLease;
 
         public string Header => "Bérletlértehozás";
 
@@ -31,14 +32,28 @@ namespace FitnessON.ViewModel
             EntrieNumber = Data.Controller.GetEntriesNumber();
             PeriodLeases = Data.Controller.GetPeriodLeasesNumber();
             Mixleases = Data.Controller.GetMixLeases();
-            date = DateTime.Now;
         }
 
         public void CreateLeaseExecute()
         {
-
+            if (selectedLease != null)
+            {
+                Data.Controller.CreateLeaseForUser(Date, user.Card, selectedLease,user);
+            }
         }
 
+        public MixLease SelectedLease
+        {
+            get
+            {
+                return this.selectedLease;
+            }
+            set
+            {
+                this.selectedLease = value;
+                this.OnProprtyChanged();
+            }
+        }
         public RelayCommand ListAllLeas { get; set; }
         public RelayCommand CreateLeaseCommand
         {
@@ -82,7 +97,7 @@ namespace FitnessON.ViewModel
                 this.OnProprtyChanged();
             }
         }
-        public DateTime Date
+        public string Date
         {
             get
             {
@@ -90,7 +105,7 @@ namespace FitnessON.ViewModel
             }
             set
             {
-                this.date = value;
+                this.date = Convert.ToDateTime(value).ToString("yyyy/MM/dd") + " 0:00 PM";
                 this.OnProprtyChanged();
             }
         }

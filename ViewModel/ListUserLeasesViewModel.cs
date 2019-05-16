@@ -85,7 +85,7 @@ namespace FitnessON.ViewModel
         {
             if(this.selectedLease != null)
             {
-                MainWindowViewModel.Instance.RenewLease(this.selectedLease);
+                MainWindowViewModel.Instance.RenewLease(this.selectedLease,user);
             }
         }
         public void LogInExecute()
@@ -131,6 +131,7 @@ namespace FitnessON.ViewModel
                     Data.Controller.UpdateLeaseNumberOfEntriesAsync(number, id, true);
                     Data.Controller.InsertToLog(user, selectedLease, "Belépett a(z) " + selectedLease.MixLease.Name + " nevű bérlettel.");
                 }
+                GetLeasesExecute();
             }
         }
 
@@ -144,6 +145,7 @@ namespace FitnessON.ViewModel
                 selectedLease.inUse = false;
                 Data.Controller.UpdateLeaseNumberOfEntriesAsync(number, id, false);
                 Data.Controller.InsertToLog(user, selectedLease, "Kilépett a(z) " + selectedLease.MixLease.Name + " nevű bérlettel.");
+                GetLeasesExecute();
             }
         }
 

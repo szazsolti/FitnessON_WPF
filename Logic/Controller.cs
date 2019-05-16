@@ -243,17 +243,6 @@
         public void InsertToLog(User user, Lease lease,string message)
         {
             Logs log = new Logs();
-            List<Logs> logs = GetLogs();
-
-            try
-            {
-                log.Log_Id = logs.Max().Log_Id + 1;
-            }
-            catch(Exception e)
-            {
-                log.Log_Id = 1;
-            }
-
             log.Time = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
             log.User_Id = user.Id;
             log.User = user;
@@ -264,6 +253,34 @@
             this.fitnessDB.SaveChanges();
         }
 
+        public void CreateLeaseForUser(string date, Card card, MixLease selectedLease, User user) {
+            DateTime time = DateTime.Now;
+            Lease lease = new Lease();
+            lease.MixLeases_Id = selectedLease.Id;
+            lease.MixLease = selectedLease;
+            lease.StartValidity = (time.ToString("yyyy-MM-dd") + " 0:00 PM");
+            lease.EndValidity = date;
+            lease.Card_Id = card.Id;
+            lease.Card = card;
+            lease.NumberOfEntries = selectedLease.NumberOfEntriesLease.Quantity;
+            lease.inUse = false;
+            this.fitnessDB.Leases.Add(lease);
+            this.fitnessDB.SaveChanges();
+            InsertToLog(user, lease, "Bérletvásárlás");
+        }
+
+        public int GetNumberOfEntries(Lease selectedLease)
+        {
+            int entriesId = this.fitnessDB.MixLeases.Where(vt => vt.Id == selectedLease.MixLeases_Id).ToList().First().NumberOfEntriesLease_Id;
+            return this.fitnessDB.NumberOfEntriesLeases.Where(vt => vt.Id == entriesId).First().Quantity + selectedLease.NumberOfEntries;
+        }
+        public void UpdateEndValidity(Lease selectedLease, string date, User user)
+        {
+            this.fitnessDB.Database.ExecuteSqlCommand(@"Update [Leases] SET EndValidity = {0} WHERE Id = {1}", date, selectedLease.Id);
+            this.fitnessDB.Database.ExecuteSqlCommand(@"Update [Leases] SET NumberOfEntries = {0} WHERE Id = {1}", GetNumberOfEntries(selectedLease), selectedLease.Id);
+            this.fitnessDB.SaveChanges();
+            InsertToLog(user, selectedLease, "Bérletújitás");
+        }
         public List<Logs> GetLogsWithDateFilter(string inputDate){
             long date = TimestringToTimestamps(inputDate);
             List <Logs> logs = new List<Logs>();

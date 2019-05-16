@@ -96,6 +96,7 @@
                   Grid.ColumnSpan="5"
                   Grid.Row="2" 
                   ItemsSource="{Binding Mixleases}"
+                  SelectedItem="{Binding SelectedLease}"
                   AutoGenerateColumns="False"
                   IsReadOnly="True">
 

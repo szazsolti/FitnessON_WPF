@@ -61,7 +61,7 @@
             HorizontalAlignment="Stretch"
             Margin="5"
             Content="Újitás"
-            Command="{Binding NewLeaseCommand}">
+            Command="{Binding ApplyCommand}">
         </Button>
 
         <DatePicker 

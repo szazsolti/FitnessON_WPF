@@ -13,16 +13,30 @@ namespace FitnessON.ViewModel
     class RenewLeaseViewModel : NotificationClass, IRenewLeaseContent
     {
         private Lease selectedLease;
+        private User user;
         private List<Lease> leases = new List<Lease>();
-        private DateTime date;
+        private string date;
         public string Header => "Bérletújitás";
 
         public RenewLeaseViewModel()
         {
-            date = DateTime.Now;
+            this.ApplyCommand = new RelayCommand(this.ApplyRenewCommandExecute);
         }
 
-        public DateTime Date
+        public void ApplyRenewCommandExecute()
+        {
+            Data.Controller.UpdateEndValidity(selectedLease, date, user);
+            this.selectedLease.EndValidity = date;
+            this.selectedLease.NumberOfEntries = Data.Controller.GetNumberOfEntries(selectedLease);
+            System.Windows.MessageBox.Show("Bérlet megújitva!", "Sikeres művelet");
+        }
+        public RelayCommand ApplyCommand
+        {
+            get;
+            set;
+        }
+
+        public string Date
         {
             get
             {
@@ -30,7 +44,7 @@ namespace FitnessON.ViewModel
             }
             set
             {
-                this.date = value;
+                this.date = Convert.ToDateTime(value).ToString("yyyy/MM/dd") + " 0:00 PM";
                 this.OnProprtyChanged();
             }
         }
@@ -45,11 +59,22 @@ namespace FitnessON.ViewModel
             {
                 this.selectedLease = value;
                 this.leases.Add(this.selectedLease);
-                Console.WriteLine(selectedLease.EndValidity);
                 this.OnProprtyChanged();
             }
         }
 
+        public User User
+        {
+            get
+            {
+                return this.user;
+            }
+            set
+            {
+                this.user = value;
+                this.OnProprtyChanged();
+            }
+        }
         public List<Lease> Leases
         {
             get
