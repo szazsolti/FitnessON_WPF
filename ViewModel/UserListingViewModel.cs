@@ -66,7 +66,6 @@ namespace FitnessON.ViewModel
             Worksheet sheet = (Worksheet)workbook.Sheets[1];
             string[] headers = new string[] { "Id", "Name", "Phone number", "Email address", "Card Id", "Image link", "Permission" };
             int[] columnWidth = new int[] { 7, 20, 15, 25, 12, 20, 10 };
-            int row = 2;
             for (int j = 0; j < headers.Count(); j++)
             {
                 Range myRange = (Range)sheet.Cells[1, j + 1];

@@ -193,7 +193,7 @@ namespace FitnessON.ViewModel
             foreach (var item in this.UserLeases)
             {
                // Console.WriteLine("date "+UnixTimeStampToDateTime(Convert.ToDouble(item.StartValidity)));
-                if (!item.StartValidity.Contains("-") && !item.StartValidity.Contains("/"))
+                if (!item.StartValidity.Contains("-") && !item.StartValidity.Contains("/") && !item.StartValidity.Equals("0") && !item.EndValidity.Equals("0"))
                 {
                     dateTime = dateTime.AddSeconds(Convert.ToDouble(item.StartValidity));
                     string printDate = dateTime.ToShortDateString() + " " + dateTime.ToShortTimeString();

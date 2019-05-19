@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,9 +16,9 @@ namespace FitnessON.Model
         public virtual MixLease MixLease { get; set; }
         public int Card_Id { get; set; }
         public virtual Card Card { get; set; }
-        public string StartValidity { get; set; }
-        public string EndValidity { get; set; }
         public int NumberOfEntries { get; set; }
         public bool inUse { get; set; }
+        public string StartValidity { get; set; }
+        public string EndValidity { get; set; }
     }
 }

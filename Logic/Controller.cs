@@ -327,6 +327,7 @@
             return leases;
         }
         public long TimestringToTimestamps(string time){
+            Console.WriteLine("ido: " + time);
             string[] dataParts = time.Replace('/', ' ').Replace('-', ' ').Replace(':', ' ').Replace('P', ' ').Replace('M', ' ').Replace('A', ' ').Split(' ');
             if (dataParts.Count()<4){return 0;}
             var toDate = new DateTime((Int32.Parse(dataParts[0])), (Int32.Parse(dataParts[1])), (Int32.Parse(dataParts[2])));
