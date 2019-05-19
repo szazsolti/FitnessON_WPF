@@ -51,7 +51,7 @@ namespace FitnessON.ViewModel
             }
             else if (inactivLeases)
             {
-                this.Leases = Data.Controller.GetLeasesWithStatusFilter(false);
+                this.Leases = Data.Controller.GetInvalidLeases();
             }
             else if (leaseTypes)
             {
@@ -59,7 +59,7 @@ namespace FitnessON.ViewModel
             }
             else if (invalidLeases)
             {
-                this.Leases = Data.Controller.GetInvalidLeases();
+                this.Leases = Data.Controller.GetLeasesWithStatusFilter(false);
             }
         }
 

@@ -27,18 +27,23 @@ namespace FitnessON.ViewModel
 
         public CreateLeaseViewModel()
         {
-            this.CreateLeaseCommand = new RelayCommand(this.CreateLeaseExecute);
+            this.CreateLeaseCommand = new RelayCommand(this.CreateLeaseExecute,this.CreateLeaseCanExecute);
             this.ListAllLeas = new RelayCommand(this.GetAllLeaseExecute);
             EntrieNumber = Data.Controller.GetEntriesNumber();
             PeriodLeases = Data.Controller.GetPeriodLeasesNumber();
             Mixleases = Data.Controller.GetMixLeases();
         }
 
+        public bool CreateLeaseCanExecute()
+        {
+            return (Date != null && !Date.Equals(""));
+        }
         public void CreateLeaseExecute()
         {
-            if (selectedLease != null)
+            if (selectedLease != null )
             {
                 Data.Controller.CreateLeaseForUser(Date, user.Card, selectedLease,user);
+                System.Windows.MessageBox.Show("Ön sikeresen vásárolt egy érletet!", "Nagy siker");
             }
         }
 

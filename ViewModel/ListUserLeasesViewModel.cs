@@ -90,48 +90,67 @@ namespace FitnessON.ViewModel
         }
         public void LogInExecute()
         {
-            if(this.selectedLease != null)
+            Data.Controller.CheckedValidDay(selectedLease);
+            if (this.selectedLease != null)
             {
-                Console.WriteLine("Valasztott neve: " + selectedLease.MixLease.Name);
-                if(selectedLease.NumberOfEntries == 2)
+                if (Data.Controller.IsvalidLeaseDate(selectedLease))
                 {
-                    System.Windows.MessageBox.Show("Már csak egyszeri belépésre van lehetősége!", "Bérlete hamarosan lejár");
-                    int number = selectedLease.NumberOfEntries;
-                    int id = selectedLease.Id;
-                    selectedLease.NumberOfEntries -= 1;
-                    selectedLease.inUse = true;
-                    number -= 1;
-                    Data.Controller.UpdateLeaseNumberOfEntriesAsync(number, id, true);
-                    Data.Controller.InsertToLog(user, selectedLease, "Belépett a(z) " + selectedLease.MixLease.Name + " nevű bérlettel.");
-                    
-                }
-                else if (selectedLease.NumberOfEntries == 1)
-                {
-                    System.Windows.MessageBox.Show("Ez az utolsó belépési lehetősége!", "Bérlete lejár");
-                    int number = selectedLease.NumberOfEntries;
-                    int id = selectedLease.Id;
-                    selectedLease.NumberOfEntries -= 1;
-                    selectedLease.inUse = true;
-                    number -= 1;
-                    Data.Controller.UpdateLeaseNumberOfEntriesAsync(number, id, true);
-                    Data.Controller.InsertToLog(user, selectedLease, "Belépett a(z) " + selectedLease.MixLease.Name + " nevű bérlettel.");
-                }
-                else if (selectedLease.NumberOfEntries < 1)
-                {
-                    System.Windows.MessageBox.Show("Ez a bérlet nem érvényes többszöri belépésre!", "Lejárt bérlet");
+                    if (!Data.Controller.CheckedValidDay(selectedLease))
+                    {
+                        System.Windows.MessageBox.Show("Ön ezen a napon nem léphet be!", "A bérlete ma nem érvényes!");
+                    }
+                    else if (!Data.Controller.CheckedValidHour(selectedLease))
+                    {
+                        System.Windows.MessageBox.Show("Ön ebben az órában nem léphet be!", "A bérlete most nem érvényes!");
+                    }
+                    else if (!Data.Controller.CountEntryPerDay(selectedLease, user))
+                    {
+                        System.Windows.MessageBox.Show("Ön ma többször már nem léphet be!", "A bérlete most nem érvényes!");
+                    }
+                    else if (selectedLease.NumberOfEntries == 2)
+                    {
+                        System.Windows.MessageBox.Show("Már csak egyszeri belépésre van lehetősége!", "Bérlete hamarosan lejár");
+                        int number = selectedLease.NumberOfEntries;
+                        int id = selectedLease.Id;
+                        selectedLease.NumberOfEntries -= 1;
+                        selectedLease.inUse = true;
+                        number -= 1;
+                        Data.Controller.UpdateLeaseNumberOfEntriesAsync(number, id, true);
+                        Data.Controller.InsertToLog(user, selectedLease, "Belépett a(z) " + selectedLease.MixLease.Name + " nevű bérlettel.");
+
+                    }
+                    else if (selectedLease.NumberOfEntries == 1)
+                    {
+                        System.Windows.MessageBox.Show("Ez az utolsó belépési lehetősége!", "Bérlete lejár");
+                        int number = selectedLease.NumberOfEntries;
+                        int id = selectedLease.Id;
+                        selectedLease.NumberOfEntries -= 1;
+                        selectedLease.inUse = true;
+                        number -= 1;
+                        Data.Controller.UpdateLeaseNumberOfEntriesAsync(number, id, true);
+                        Data.Controller.InsertToLog(user, selectedLease, "Belépett a(z) " + selectedLease.MixLease.Name + " nevű bérlettel.");
+                    }
+                    else if (selectedLease.NumberOfEntries < 1)
+                    {
+                        System.Windows.MessageBox.Show("Ez a bérlet nem érvényes többszöri belépésre!", "Lejárt bérlet");
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("Sikeres belépés!", "Jó testmozgást!");
+                        int number = selectedLease.NumberOfEntries;
+                        int id = selectedLease.Id;
+                        selectedLease.NumberOfEntries -= 1;
+                        selectedLease.inUse = true;
+                        number -= 1;
+                        Data.Controller.UpdateLeaseNumberOfEntriesAsync(number, id, true);
+                        Data.Controller.InsertToLog(user, selectedLease, "Belépett a(z) " + selectedLease.MixLease.Name + " nevű bérlettel.");
+                    }
+                    GetLeasesExecute();
                 }
                 else
                 {
-                    System.Windows.MessageBox.Show("Sikeres belépés!", "Jó testmozgást!");
-                    int number = selectedLease.NumberOfEntries;
-                    int id = selectedLease.Id;
-                    selectedLease.NumberOfEntries -= 1;
-                    selectedLease.inUse = true;
-                    number -= 1;
-                    Data.Controller.UpdateLeaseNumberOfEntriesAsync(number, id, true);
-                    Data.Controller.InsertToLog(user, selectedLease, "Belépett a(z) " + selectedLease.MixLease.Name + " nevű bérlettel.");
+                    System.Windows.MessageBox.Show("Az Ön bérlete lejárt!", "Lejárt bérlet");
                 }
-                GetLeasesExecute();
             }
         }
 

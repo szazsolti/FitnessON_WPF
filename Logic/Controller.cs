@@ -295,11 +295,57 @@
             return this.fitnessDB.Leases.Where(vt => vt.MixLease.Name.Equals(leaseName)).ToList();
         }
 
-        public List<Lease> GetInvalidLeases()
+        public bool IsvalidLeaseDate(Lease selectedLease)
         {
-            return this.fitnessDB.Leases.Where(vt => vt.NumberOfEntries == 0).ToList();
+            return TimestringToTimestamps(selectedLease.EndValidity) > TimestringToTimestamps(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"));
         }
 
+        public List<Lease> GetInvalidLeases()
+        {
+            //return this.fitnessDB.Leases.Where(vt => vt.NumberOfEntries == 0).ToList();
+            List<Lease> leases = new List<Lease>();
+            foreach (var item in GetLeases())
+            {
+                if(item.NumberOfEntries == 0 || !IsvalidLeaseDate(item))
+                {
+                    leases.Add(item);
+                }
+            }
+            return leases;
+        }
+        private bool IsToday(string date)
+        {
+            string[] parts = date.Replace('/', '-').Split('-');
+            return ( Int32.Parse(parts[2].Split(' ').First()) == DateTime.Now.Day);
+        }
+        public bool CountEntryPerDay(Lease selectedLease, User user)
+        {
+            int counter = 0;
+            foreach (var item in GetLogs())
+            {
+                if(selectedLease.MixLease.Enter_day != 0 && user.Id == item.User.Id && item.Lease.MixLease.Id == selectedLease.MixLease.Id && item.Lease_Id == selectedLease.Id && IsToday(item.Time) && item.Message.Contains("Belépett"))
+                {
+                    counter++;
+                    if (counter >= selectedLease.MixLease.Enter_day)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        public bool CheckedValidHour(Lease selectedLease)
+        {
+            Console.WriteLine(DateTime.Now.Hour);
+            return (selectedLease.MixLease.StartHour <= DateTime.Now.Hour && selectedLease.MixLease.EndHour > DateTime.Now.Hour);
+        }
+
+        public bool CheckedValidDay(Lease selectedLease)
+        {
+            int day = ((int)DateTime.Now.DayOfWeek == 0) ? 7 : (int)DateTime.Now.DayOfWeek;
+            string[] days = {"" ,"He", "Ke", "Sze", "Csu", "Pe", "Szo", "Va" };
+            return selectedLease.MixLease.Days.Contains(days[day]);
+        }
         public List<Lease> GetLeasesWithStatusFilter(bool validity)
         {
             long currentTime = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
@@ -308,7 +354,7 @@
             {
                 foreach (var item in GetLeases())
                 {
-                    if(TimestringToTimestamps(item.EndValidity) > currentTime)
+                    if(TimestringToTimestamps(item.EndValidity) > currentTime || item.EndValidity.Equals("0"))
                     {
                         leases.Add(item);
                     }
@@ -318,7 +364,7 @@
             {
                 foreach (var item in GetLeases())
                 {
-                    if (TimestringToTimestamps(item.EndValidity) < currentTime)
+                    if (TimestringToTimestamps(item.EndValidity) < currentTime && !item.EndValidity.Equals("0"))
                     {
                         leases.Add(item);
                     }
