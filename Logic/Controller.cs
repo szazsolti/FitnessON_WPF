@@ -243,17 +243,6 @@
         public void InsertToLog(User user, Lease lease,string message)
         {
             Logs log = new Logs();
-            List<Logs> logs = GetLogs();
-
-            try
-            {
-                log.Log_Id = logs.Max().Log_Id + 1;
-            }
-            catch(Exception e)
-            {
-                log.Log_Id = 1;
-            }
-
             log.Time = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
             log.User_Id = user.Id;
             log.User = user;
@@ -263,6 +252,89 @@
             this.fitnessDB.Logs.Add(log);
             this.fitnessDB.SaveChanges();
         }
+
+        public void CreateLeaseForUser(string date, Card card, MixLease selectedLease, User user) {
+            DateTime time = DateTime.Now;
+            Lease lease = new Lease();
+            lease.MixLeases_Id = selectedLease.Id;
+            lease.MixLease = selectedLease;
+            lease.StartValidity = (time.ToString("yyyy-MM-dd") + " 0:00 PM");
+            lease.EndValidity = date;
+            lease.Card_Id = card.Id;
+            lease.Card = card;
+            lease.NumberOfEntries = selectedLease.NumberOfEntriesLease.Quantity;
+            lease.inUse = false;
+            this.fitnessDB.Leases.Add(lease);
+            this.fitnessDB.SaveChanges();
+            InsertToLog(user, lease, "Bérletvásárlás");
+        }
+
+        public int GetNumberOfEntries(Lease selectedLease)
+        {
+            int entriesId = this.fitnessDB.MixLeases.Where(vt => vt.Id == selectedLease.MixLeases_Id).ToList().First().NumberOfEntriesLease_Id;
+            return this.fitnessDB.NumberOfEntriesLeases.Where(vt => vt.Id == entriesId).First().Quantity + selectedLease.NumberOfEntries;
+        }
+        public void UpdateEndValidity(Lease selectedLease, string date, User user)
+        {
+            this.fitnessDB.Database.ExecuteSqlCommand(@"Update [Leases] SET EndValidity = {0} WHERE Id = {1}", date, selectedLease.Id);
+            this.fitnessDB.Database.ExecuteSqlCommand(@"Update [Leases] SET NumberOfEntries = {0} WHERE Id = {1}", GetNumberOfEntries(selectedLease), selectedLease.Id);
+            this.fitnessDB.SaveChanges();
+            InsertToLog(user, selectedLease, "Bérletújitás");
+        }
+        public List<Logs> GetLogsWithDateFilter(string inputDate){
+            long date = TimestringToTimestamps(inputDate);
+            List <Logs> logs = new List<Logs>();
+            foreach (var item in this.fitnessDB.Logs.ToList()){
+                if (TimestringToTimestamps(item.Time) > date){
+                    logs.Add(item);
+                }
+            }return logs;
+        }
+        public List<Lease> GetLeasesWithTypeFilter(string leaseName)
+        {
+            return this.fitnessDB.Leases.Where(vt => vt.MixLease.Name.Equals(leaseName)).ToList();
+        }
+
+        public List<Lease> GetInvalidLeases()
+        {
+            return this.fitnessDB.Leases.Where(vt => vt.NumberOfEntries == 0).ToList();
+        }
+
+        public List<Lease> GetLeasesWithStatusFilter(bool validity)
+        {
+            long currentTime = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
+            List<Lease> leases = new List<Lease>();
+            if (validity)
+            {
+                foreach (var item in GetLeases())
+                {
+                    if(TimestringToTimestamps(item.EndValidity) > currentTime)
+                    {
+                        leases.Add(item);
+                    }
+                }
+            }
+            else
+            {
+                foreach (var item in GetLeases())
+                {
+                    if (TimestringToTimestamps(item.EndValidity) < currentTime)
+                    {
+                        leases.Add(item);
+                    }
+                }
+            }
+            return leases;
+        }
+        public long TimestringToTimestamps(string time){
+            string[] dataParts = time.Replace('/', ' ').Replace('-', ' ').Replace(':', ' ').Replace('P', ' ').Replace('M', ' ').Replace('A', ' ').Split(' ');
+            if (dataParts.Count()<4){return 0;}
+            var toDate = new DateTime((Int32.Parse(dataParts[0])), (Int32.Parse(dataParts[1])), (Int32.Parse(dataParts[2])));
+            toDate.AddDays((Int32.Parse(dataParts[3])));//ora
+            toDate.AddDays((Int32.Parse(dataParts[4])));//perc
+            return long.Parse(toDate.Subtract(new DateTime(1970, 01, 01)).TotalSeconds.ToString());
+        }
+
 
         public List<Lease> GetLeases()
         {

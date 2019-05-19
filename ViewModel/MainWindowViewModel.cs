@@ -12,6 +12,7 @@ namespace FitnessON.ViewModel
     using System.Text;
     using System.Threading.Tasks;
     using System.Windows;
+    using System.Windows.Media;
 
     //MainWindowViewModel:NotificationClass
     public class MainWindowViewModel : NotificationClass
@@ -107,6 +108,17 @@ namespace FitnessON.ViewModel
             }
         }
 
+        public void RenewLease(Lease selectedLease, User user)
+        {
+            RenewLeaseViewModel renewLeaseViewModel = new RenewLeaseViewModel();
+            if (!checkIfHeaderIsOpened(renewLeaseViewModel.Header))
+            {
+                this.Contents.Add(renewLeaseViewModel);
+                renewLeaseViewModel.SelectedLease = selectedLease;
+                renewLeaseViewModel.User = user;
+                addHeader(renewLeaseViewModel.Header);
+            }
+        }
         public void SetLeaseListing()
         {
             LeaseListingWithFilterViewModel leaseListingWithFilterView = new LeaseListingWithFilterViewModel();
