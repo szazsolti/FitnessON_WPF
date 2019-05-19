@@ -20,9 +20,13 @@ namespace FitnessON.ViewModel
 
         public RenewLeaseViewModel()
         {
-            this.ApplyCommand = new RelayCommand(this.ApplyRenewCommandExecute);
+            this.ApplyCommand = new RelayCommand(this.ApplyRenewCommandExecute, this.ApplyRenewCommandCanExecute);
         }
 
+        public bool ApplyRenewCommandCanExecute()
+        {
+            return (Date != null && !Date.Equals(""));
+        }
         public void ApplyRenewCommandExecute()
         {
             Data.Controller.UpdateEndValidity(selectedLease, date, user);

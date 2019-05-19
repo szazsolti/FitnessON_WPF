@@ -47,6 +47,8 @@ namespace FitnessON.Model.DBContext
             context.MixLeases.Add(new MixLease { Id = 1, PeriodLease_Id = 1, StartHour = 8, EndHour = 10, Days = "He,Ke,Sze,Csu,Pe", NumberOfEntriesLease_Id = 1, Enter_day = 0, Price=200, Name = "Időszakos"});
             context.MixLeases.Add(new MixLease { Id = 2, PeriodLease_Id = 2, StartHour = 0, EndHour = 24, Days = "Szo,Va", NumberOfEntriesLease_Id = 2, Enter_day = 1, Price=300, Name = "Belépésszám" });
             context.MixLeases.Add(new MixLease { Id = 3, PeriodLease_Id = 2, StartHour = 10, EndHour = 12, Days = "He,Ke,Sze,Csu,Pe,Szo,Va", NumberOfEntriesLease_Id = 1, Enter_day = 3, Price=400, Name = "Vegyes" });
+            context.MixLeases.Add(new MixLease { Id = 4, PeriodLease_Id = 3, StartHour = 0, EndHour = 12, Days = "He,Ke,Sze,Csu,Pe,Szo,Va", NumberOfEntriesLease_Id = 1, Enter_day = 3, Price = 400, Name = "Vegyes" });
+            context.MixLeases.Add(new MixLease { Id = 5, PeriodLease_Id = 3, StartHour = 0, EndHour = 24, Days = "He,Ke,Sze,Csu,Pe,Szo,Va", NumberOfEntriesLease_Id = 1, Enter_day = 2, Price = 500, Name = "Vegyes" });
         }
         /*
         private void AddLeaseTypes(FitnessDB context)
