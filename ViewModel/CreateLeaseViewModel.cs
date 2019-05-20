@@ -43,7 +43,7 @@ namespace FitnessON.ViewModel
             if (selectedLease != null )
             {
                 Data.Controller.CreateLeaseForUser(Date, user.Card, selectedLease,user);
-                System.Windows.MessageBox.Show("Ön sikeresen vásárolt egy érletet!", "Nagy siker");
+                System.Windows.MessageBox.Show("Ön sikeresen vásárolt egy bérletet!", "Nagy siker");
             }
         }
 

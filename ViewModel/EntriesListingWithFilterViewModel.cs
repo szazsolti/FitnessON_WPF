@@ -143,7 +143,7 @@ namespace FitnessON.ViewModel
             {
                 this.Logs = Data.Controller.GetLogsWithTypeFilter(inputText);
             }
-            else if (date)
+            else if (date && DateTime != null && !DateTime.Equals(""))
             {
                 this.Logs = Data.Controller.GetLogsWithDateFilter(DateTime);
             }
