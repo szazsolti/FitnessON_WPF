@@ -220,6 +220,11 @@
             this.fitnessDB.SaveChanges();
         }
 
+        public void DeleteUser(User SelectedUser)
+        {
+            this.fitnessDB.User.Remove(SelectedUser);
+            this.fitnessDB.SaveChanges();
+        }
         public List<Logs> GetLogs()
         {
             return this.fitnessDB.Logs.ToList(); ;

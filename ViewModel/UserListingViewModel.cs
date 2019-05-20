@@ -20,12 +20,40 @@ namespace FitnessON.ViewModel
     {
         public List<User> users=new List<User>();
         public string Header => "Ügyfél keresés";
+        public User selectedUser;
 
         public UserListingViewModel()
         {
             GetUsers();
             this.RefreshUsers = new RelayCommand(this.RefreshUsersExecute);
             this.ExportData = new RelayCommand(this.Export);
+            this.DeleteUserCommand = new RelayCommand(this.DeleteUserExecute);
+        }
+
+        public void DeleteUserExecute()
+        {
+            if(this.SelectedUser != null)
+            {
+                Data.Controller.DeleteUser(SelectedUser);
+                GetUsers();
+            }
+        }
+        public RelayCommand DeleteUserCommand
+        {
+            get;
+            set;
+        }
+        public User SelectedUser
+        {
+            get
+            {
+                return this.selectedUser;
+            }
+            set
+            {
+                this.selectedUser = value;
+                this.OnProprtyChanged();
+            }
         }
 
         public List<User> Users
