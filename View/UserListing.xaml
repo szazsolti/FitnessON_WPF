@@ -33,11 +33,20 @@
                 Command="{Binding ExportData}"
                 Content="Exportálás">
             </Button>
+            <Button 
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Margin="2"
+                MinWidth="100"
+                Command="{Binding DeleteUserCommand}"
+                Content="Törlés">
+            </Button>
         </StackPanel>
 
         <DataGrid Margin="3"
                   Grid.Row="1" Grid.Column="0"
                   ItemsSource="{Binding Users}"
+                  SelectedItem="{Binding SelectedUser}"
                   AutoGenerateColumns="False"
                   IsReadOnly="True">
             <DataGrid.Columns>
