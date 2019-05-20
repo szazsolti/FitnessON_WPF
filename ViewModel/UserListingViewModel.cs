@@ -27,16 +27,21 @@ namespace FitnessON.ViewModel
             GetUsers();
             this.RefreshUsers = new RelayCommand(this.RefreshUsersExecute);
             this.ExportData = new RelayCommand(this.Export);
-            this.DeleteUserCommand = new RelayCommand(this.DeleteUserExecute);
+            this.DeleteUserCommand = new RelayCommand(this.DeleteUserExecute, this.DeleteUserCanExecute);
         }
 
+        public bool DeleteUserCanExecute()
+        {
+            if (this.SelectedUser != null)
+            {
+                return true;
+            }
+            return false;
+        }
         public void DeleteUserExecute()
         {
-            if(this.SelectedUser != null)
-            {
                 Data.Controller.DeleteUser(SelectedUser);
                 GetUsers();
-            }
         }
         public RelayCommand DeleteUserCommand
         {
