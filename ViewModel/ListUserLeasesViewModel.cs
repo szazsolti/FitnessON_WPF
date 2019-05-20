@@ -25,6 +25,11 @@ namespace FitnessON.ViewModel
             this.LogOutCommand = new RelayCommand(this.LogOutExecute, this.LogOutCanExecute);
             this.RenewLeaseCommand = new RelayCommand(this.RenewExecute);
         }
+        public RelayCommand DeleteLeaseCommand
+        {
+            get;
+            set;
+        }
 
         public RelayCommand RenewLeaseCommand
         {
@@ -80,6 +85,7 @@ namespace FitnessON.ViewModel
                 this.OnProprtyChanged();
             }
         }
+
 
         public void RenewExecute()
         {

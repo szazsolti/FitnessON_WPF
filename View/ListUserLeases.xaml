@@ -87,6 +87,5 @@
             Content="Kilépés"
             Command="{Binding LogOutCommand}">
         </Button>
-        
     </Grid>
 </UserControl>
